@@ -18,28 +18,18 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Aareyan Manzoor's website
-email: johndoesmith1729@gmail.com
-description: This is Aareyan Manzoor's website. Includes a blog, some scans of old thesis/books and a Latex group.
+title: Jiayu Ellie Su
+description: Personal website of Jiayu Ellie Su.
 baseurl: "/" # the subpath of your site, e.g. /blog
-url: "http://aareyanmanzoor.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-github_username:  AareyanManzoor
-repository: "AareyanManzoor/AareyanManzoor.github.io"
+url: "https://jiayuelliesu.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+github_username: JiayuEllieSu
+repository: "JiayuEllieSu/JiayuEllieSu.github.io"
 
 comments:
-        provider: "giscus"
-        giscus:
-                repo_id: "AareyanManzoor/AareyanManzoor.github.io"
-                category_name: "General"
-                discussion_term: "pathname"
-                reactions_enabled: "1"
-                theme: "preferred_color_scheme"
-                loading: "lazy"
+        provider: false
 
 future: true
 search: true
-#google analytics
-google_analytics: G-PY35G17849
 
 defaults:
        - scope:
@@ -53,20 +43,11 @@ defaults:
                  author_profile: true
 
 author:
-        name: "Aareyan Manzoor"
-        avatar: "/assets/images/20241025_172043 (1).jpg"
-        bio: "I am a grad student at Waterloo. My current interests are in the intersection of operator algebras and quantum information. I am a former bangladeshi but current ontorian, and I am a member of the LGBTQ+ community"
-        location: "Ontario, canada"
+        name: "Jiayu Ellie Su"
         links:
-                - label: "youtube"
-                  icon: "fab fa-fw fa-youtube"
-                  url: "https://www.youtube.com/channel/UCUq84h8CO4wBDaWZEABoVZQ"
-                - label: "github"
+                - label: "GitHub"
                   icon: "fab fa-fw fa-github"
-                  url: "https://github.com/AareyanManzoor"
-                - label: "website repository"
-                  icon : "fab fa-fw fa-github"
-                  url: "https://github.com/AareyanManzoor/AareyanManzoor.github.io"
+                  url: "https://github.com/JiayuEllieSu"
 
 kramdown: 
         math_engine: katex
