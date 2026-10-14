@@ -1,10 +1,10 @@
 ---
 layout: single
 title: "Blue to blue"
-date: 2027-04-01
-display_date: April 2027
+date: 2026-04-01
+display_date: April 2026
 category: poetry
-description: "A poem dated April 2027."
+description: "A poem written in April 2026."
 classes: wide
 author_profile: true
 ---
