@@ -14,15 +14,9 @@ author_profile: true
 
 One of my first polished compositions, this string quartet was completed in December 2025.
 
-{% assign audio_path = '/String Quartet in D major by Jiayu Ellie Su.mp3' %}
-{% assign audio_file = site.static_files | where: "path", audio_path | first %}
-{% if audio_file %}
 <audio controls preload="metadata" style="width: 100%;">
-  <source src="{{ audio_path | relative_url }}" type="audio/mpeg">
+  <source src="{{ '/String%20Quartet%20in%20D%20major%20by%20Jiayu%20Ellie%20Su.mp3' | relative_url }}" type="audio/mpeg">
   Your browser does not support audio playback.
 </audio>
 
-[Listen or download the MP3]({{ audio_path | relative_url }})
-{% else %}
-*Recording will be available here soon.*
-{% endif %}
+[Listen or download the MP3]({{ '/String%20Quartet%20in%20D%20major%20by%20Jiayu%20Ellie%20Su.mp3' | relative_url }})
