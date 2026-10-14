@@ -31,6 +31,12 @@ comments:
 future: true
 
 collections:
+        research:
+                output: true
+                permalink: /research/:name/
+        projects:
+                output: true
+                permalink: /projects/:name/
         writing:
                 output: true
                 permalink: /writing/:name/
