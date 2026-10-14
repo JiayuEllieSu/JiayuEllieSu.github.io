@@ -14,7 +14,7 @@ author_profile: true
 
 One of my first polished compositions, this string quartet was completed in December 2025.
 
-{% assign audio_path = '/assets/music/string-quartet-in-d-major.mp3' %}
+{% assign audio_path = '/String Quartet in D major by Jiayu Ellie Su.mp3' %}
 {% assign audio_file = site.static_files | where: "path", audio_path | first %}
 {% if audio_file %}
 <audio controls preload="metadata" style="width: 100%;">
