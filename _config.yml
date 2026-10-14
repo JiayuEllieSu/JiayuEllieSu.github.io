@@ -63,6 +63,9 @@ author:
                 - label: "GitHub"
                   icon: "fab fa-fw fa-github"
                   url: "https://github.com/JiayuEllieSu"
+                - label: "ORCID"
+                  icon: "fab fa-fw fa-orcid"
+                  url: "https://orcid.org/0009-0006-8767-069X"
 
 kramdown: 
         math_engine: katex
