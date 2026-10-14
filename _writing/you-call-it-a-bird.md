@@ -1,10 +1,10 @@
 ---
 layout: single
 title: "You Call It a Bird"
-date: 2026-10-13
-display_date: October 2026
+date: 2025-09-01
+display_date: September 2025
 category: poetry
-description: "A poem written in October 2026."
+description: "A poem written in September 2025."
 classes: wide
 author_profile: true
 ---
