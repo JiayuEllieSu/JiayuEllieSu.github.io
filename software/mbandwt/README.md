@@ -21,11 +21,15 @@ experimentation, and research prototypes.
 - NumPy and SciPy
 - Optional: PyWavelets for cross-checking, matplotlib for plotting
 
-Download/clone the project source, change into the `mbandwt` directory, then:
+The source code currently lives in the `software/mbandwt` folder of my
+personal website repository. Clone it and install from that folder:
 
 ```bash
+git clone https://github.com/JiayuEllieSu/JiayuEllieSu.github.io.git
+cd JiayuEllieSu.github.io/software/mbandwt
 python -m pip install -e .
 ```
+
 
 To run the included tests:
 
