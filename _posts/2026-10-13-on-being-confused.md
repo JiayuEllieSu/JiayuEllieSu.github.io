@@ -1,5 +1,6 @@
 ---
 layout: single
+permalink: /on-being-confused/
 title: "On Being Confused"
 date: 2026-10-13
 author: "Jiayu Ellie Su"
