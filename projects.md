@@ -1,6 +1,6 @@
 ---
 layout: single
-title: Projects
+title: Projects & Notes
 permalink: /projects/
 description: Projects and explorations by Jiayu Ellie Su.
 classes: wide
