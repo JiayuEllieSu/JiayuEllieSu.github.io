@@ -53,3 +53,26 @@ input, textarea, select, pre {
   background-color: var(--plum-panel);
   color: var(--plum-text);
 }
+
+/* Writing, music, and blog entries */
+.creative-entry {
+  margin: 1.25rem 0;
+  padding: 1rem 1.2rem;
+  background: #31243a;
+  border: 1px solid #55445d;
+  border-radius: 8px;
+}
+.creative-entry h3 {
+  margin: 0 0 .35rem;
+  font-size: 1.15em;
+}
+.creative-entry p {
+  margin: .45rem 0;
+}
+.creative-entry__meta, .creative-empty {
+  color: #d9cedd;
+  font-size: .9em;
+}
+.creative-empty {
+  padding: .65rem 0 1.25rem;
+}
