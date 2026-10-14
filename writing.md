@@ -2,7 +2,7 @@
 layout: single
 title: Writing
 permalink: /writing/
-description: Poetry, essays, and reflections by Jiayu Ellie Su.
+description: Poetry, essays, creative prose, and reflections by Jiayu Ellie Su.
 classes: wide
 author_profile: true
 ---
@@ -13,6 +13,7 @@ A collection of my poems, essays, and thoughts.
 {% assign poetry = writing_items | where: "category", "poetry" %}
 {% assign essays = writing_items | where: "category", "essay" %}
 {% assign reflections = writing_items | where: "category", "reflection" %}
+{% assign creative_prose = writing_items | where: "category", "creative-prose" %}
 
 ## Poetry
 {% if poetry.size > 0 %}
@@ -38,6 +39,19 @@ A collection of my poems, essays, and thoughts.
 {% endfor %}
 {% else %}
 <p class="creative-empty">Essays will appear here.</p>
+{% endif %}
+
+## Creative Prose
+{% if creative_prose.size > 0 %}
+{% for entry in creative_prose %}
+<div class="creative-entry">
+  <h3><a href="{{ entry.url | relative_url }}">{{ entry.title | escape }}</a></h3>
+  {% if entry.date %}<p class="creative-entry__meta">{{ entry.date | date: "%B %Y" }}</p>{% endif %}
+  {% if entry.description %}<p>{{ entry.description | escape }}</p>{% endif %}
+</div>
+{% endfor %}
+{% else %}
+<p class="creative-empty">Creative prose will appear here.</p>
 {% endif %}
 
 ## Philosophical Reflections
