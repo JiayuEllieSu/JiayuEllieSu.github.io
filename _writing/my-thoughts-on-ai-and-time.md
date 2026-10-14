@@ -4,12 +4,12 @@ title: "My Thoughts on AI and Time"
 date: 2026-09-01
 display_date: September 2026
 category: essay
-description: "An English in-class reflection on mediating structures, AI, and our experience of time, responding to a reading by Zadie Smith. Lightly revised afterward."
+description: "An English in-class reflection on AI and mediated time, responding to Zadie Smith’s essay Some Notes on Mediated Time from Dead and Alive: Essays (2025). Lightly revised afterward."
 classes: wide
 author_profile: true
 ---
 
-*Written in September 2026 for an in-class English reflection on mediating structures and how they shape the way we experience the world, following a reading by Zadie Smith. Lightly revised afterward.*
+*Written in September 2026 for an in-class English reflection on mediating structures and how they shape our experience of the world, in response to Zadie Smith’s essay “Some Notes on Mediated Time” from Dead and Alive: Essays (2025). Lightly revised afterward.*
 
 We as humans have always experienced time through mediating structures: religion, storytelling, politics, art, and particularly the practice of learning. While reading Smith, I was struck by the fact that although she writes primarily about social media and smartphones, AI seems like the next version of the same problem. It is not simply changing how we spend our time, but also how we perceive its value. AI promises to save us time, yet I wonder whether, in saving time now, we are stealing something from our future selves.
 
