@@ -6,4 +6,17 @@ classes: wide
 author_profile: true
 ---
 
-This page is a work in progress. I'll share my research projects, papers, posters, and presentations here.
+Research projects, papers, and presentations.
+
+{% assign entries = site.research | sort: "date" | reverse %}
+{% if entries.size > 0 %}
+{% for entry in entries %}
+<article class="creative-entry">
+<h3><a href="{{ entry.url | relative_url }}">{{ entry.title | escape }}</a></h3>
+{% if entry.status %}<p class="creative-entry__meta">{{ entry.status | escape }}</p>{% endif %}
+{% if entry.description %}<p>{{ entry.description | escape }}</p>{% endif %}
+</article>
+{% endfor %}
+{% else %}
+<p class="creative-empty">Research entries will appear here.</p>
+{% endif %}
