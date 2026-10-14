@@ -1,9 +1,11 @@
 main:
-        - title: Home
-          url: /
-        - title: Research
-          url: research.html
-        - title: Blog
-          url: blog.html
-        - title: TeXromancers
-          url: Texromancers.html
+  - title: Home
+    url: /
+  - title: Research
+    url: /research.html
+  - title: Projects
+    url: /projects/
+  - title: Writing
+    url: /writing/
+  - title: Music
+    url: /music/
