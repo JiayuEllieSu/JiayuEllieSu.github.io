@@ -1,0 +1,9 @@
+numpy>=1.22
+scipy>=1.8
+
+[plot]
+matplotlib>=3.5
+
+[test]
+pytest>=7
+PyWavelets>=1.4

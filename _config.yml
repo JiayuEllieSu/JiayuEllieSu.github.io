@@ -98,3 +98,7 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+# Keep the Python library in GitHub without publishing it as Jekyll pages.
+exclude:
+  - software

@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mbandwt"
+version = "0.1.0"
+description = "General M-band discrete wavelet transforms and perfect-reconstruction filter banks in Python"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Jiayu Ellie Su" }]
+keywords = [
+    "wavelets",
+    "M-band",
+    "filter banks",
+    "multirate",
+    "signal processing",
+    "perfect reconstruction",
+    "polyphase",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering",
+]
+dependencies = [
+    "numpy>=1.22",
+    "scipy>=1.8",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7", "PyWavelets>=1.4"]
+plot = ["matplotlib>=3.5"]
+
+[project.urls]
+Homepage = "https://github.com/JiayuEllieSu/JiayuEllieSu.github.io/tree/main/software/mbandwt"
+Source = "https://github.com/JiayuEllieSu/JiayuEllieSu.github.io/tree/main/software/mbandwt"
+Issues = "https://github.com/JiayuEllieSu/JiayuEllieSu.github.io/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
