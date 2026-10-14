@@ -2,17 +2,37 @@
 layout: single
 title: Projects
 permalink: /projects/
-description: Projects and notes by Jiayu Ellie Su.
+description: Projects and explorations by Jiayu Ellie Su.
 classes: wide
 author_profile: true
 ---
 
-This page is a work in progress.
+Projects, experiments, and things I'm learning.
+
+{% assign entries = site.projects | sort: "date" | reverse %}
+{% assign projects = entries | where: "category", "project" %}
+{% assign notes = entries | where: "category", "note" %}
 
 ## Projects
-
-Independent projects, programming, outreach, and experiments will go here.
+{% if projects.size > 0 %}
+{% for entry in projects %}
+<article class="creative-entry">
+<h3><a href="{{ entry.url | relative_url }}">{{ entry.title | escape }}</a></h3>
+{% if entry.description %}<p>{{ entry.description | escape }}</p>{% endif %}
+</article>
+{% endfor %}
+{% else %}
+<p class="creative-empty">Projects will appear here.</p>
+{% endif %}
 
 ## Notes & Explorations
-
-Mathematical proofs, physics explanations, interesting problems, and ideas in progress will go here.
+{% if notes.size > 0 %}
+{% for entry in notes %}
+<article class="creative-entry">
+<h3><a href="{{ entry.url | relative_url }}">{{ entry.title | escape }}</a></h3>
+{% if entry.description %}<p>{{ entry.description | escape }}</p>{% endif %}
+</article>
+{% endfor %}
+{% else %}
+<p class="creative-empty">Mathematics, physics, and other notes will appear here.</p>
+{% endif %}
