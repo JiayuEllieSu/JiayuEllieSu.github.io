@@ -44,6 +44,7 @@ defaults:
 
 author:
         name: "Jiayu Ellie Su"
+        bio: "Student at Phillips Academy Andover. Interested in mathematics, physics, and the spaces between disciplines."
         links:
                 - label: "GitHub"
                   icon: "fab fa-fw fa-github"
