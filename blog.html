@@ -1,18 +1,33 @@
 ---
 layout: single
 title: Blog
-description: page that leads into my blog posts.
+description: Blog posts by Jiayu Ellie Su.
 classes: wide
 author_profile: true
 ---
-<head> {% include katex.html %} </head>
-<h2>Latest Posts</h2>
 
-<ul>
-  {% for post in site.posts %}
-    <li>
-	<h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-      {{ post.excerpt }}
-    </li>
+{% include katex.html %}
+
+<p>Notes, ideas, and occasional updates.</p>
+
+<h2>Latest Posts</h2>
+{% assign ellie_posts = site.posts | where: "author", "Jiayu Ellie Su" %}
+{% if ellie_posts.size > 0 %}
+  {% for post in ellie_posts %}
+  <article class="creative-entry">
+    <h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+    <p class="creative-entry__meta">
+      <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+      {% if post.categories.size > 0 %} · {{ post.categories | join: ", " | escape }}{% endif %}
+    </p>
+    {% if post.description %}
+      <p>{{ post.description | escape }}</p>
+    {% else %}
+      <p>{{ post.excerpt | strip_html | truncatewords: 35 }}</p>
+    {% endif %}
+    <p><a href="{{ post.url | relative_url }}">Read more →</a></p>
+  </article>
   {% endfor %}
-</ul>
+{% else %}
+<p class="creative-empty">No blog posts yet. Check back soon.</p>
+{% endif %}
