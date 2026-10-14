@@ -3,7 +3,7 @@ layout: single
 title: "WACCCN: Wavelet-Based Multiscale Anisotropy-Aware Cell-Cell Communication Inference and Niche Segmentation"
 description: "A wavelet-based framework for anisotropy-aware cell-cell communication inference and spatial transcriptomics niche segmentation."
 date: 2025-12-21
-status: "Published in ACM ICCBB 2025 · CSEF 2026 awards · JMM 2026 poster"
+status: "Published in ACM ICCBB 2025 · ICCBB 2025 presentation · CSEF 2026 awards · JMM 2026 poster"
 author_profile: true
 ---
 
@@ -22,4 +22,5 @@ I led the framework's development, including the anisotropic kernels, computatio
 ### Awards and presentations
 
 - **Connecticut Science and Engineering Fair (CSEF), 2026:** 1st Place, High School Computational Biology & Bioinformatics; 3rd Place, High School Team Life Science.
+- **International Conference on Computational Biology and Bioinformatics (ICCBB), 2025:** Conference presentation.
 - **Joint Mathematics Meetings (JMM), 2026:** Poster presentation. [View the poster abstract](https://meetings.ams.org/math/jmm2026/meetingapp.cgi/Paper/58821).
