@@ -29,6 +29,14 @@ comments:
         provider: false
 
 future: true
+
+collections:
+        writing:
+                output: true
+                permalink: /writing/:name/
+        music:
+                output: true
+                permalink: /music/:name/
 search: true
 
 defaults:
@@ -39,7 +47,7 @@ defaults:
        - scope:
                path: "_posts/"
          values:
-                 comments: true
+                 comments: false
                  author_profile: true
 
 author:
