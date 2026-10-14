@@ -26,6 +26,13 @@ I became increasingly interested in writing music of my own. In ninth grade, I t
   <h3><a href="{{ entry.url | relative_url }}">{{ entry.title | escape }}</a></h3>
   {% if entry.date %}<p class="creative-entry__meta">{{ entry.date | date: "%B %Y" }}</p>{% endif %}
   {% if entry.description %}<p>{{ entry.description | escape }}</p>{% endif %}
+  {% if entry.title == "String Quartet in D Major" %}
+  <audio controls preload="metadata" style="width: 100%; margin-top: 0.75rem;">
+    <source src="{{ '/String%20Quartet%20in%20D%20major%20by%20Jiayu%20Ellie%20Su.mp3' | relative_url }}" type="audio/mpeg">
+    Your browser does not support audio playback.
+  </audio>
+  <p><a href="{{ '/String%20Quartet%20in%20D%20major%20by%20Jiayu%20Ellie%20Su.mp3' | relative_url }}">Open the MP3</a></p>
+  {% endif %}
 </div>
 {% endfor %}
 {% else %}
