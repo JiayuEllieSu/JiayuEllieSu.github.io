@@ -7,3 +7,49 @@ search: false
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+/* Deep Plum site palette. Kept after theme imports to override theme styling. */
+:root {
+  --plum-bg: #1b1624;
+  --plum-panel: #31243a;
+  --plum-text: #f5eff7;
+  --plum-muted: #d9cedd;
+  --plum-accent: #cbb0e0;
+  --plum-border: #55445d;
+}
+html, body, .initial-content, #main, .page, .archive {
+  background-color: var(--plum-bg);
+  color: var(--plum-text);
+}
+.masthead, .greedy-nav, .greedy-nav .hidden-links {
+  background-color: var(--plum-panel);
+}
+.page__footer {
+  background-color: #241b2d;
+  color: var(--plum-muted);
+}
+.sidebar, .page__content, .page__inner-wrap {
+  color: var(--plum-text);
+}
+a, .page__content a, .author__urls a {
+  color: var(--plum-accent);
+}
+a:hover, a:focus {
+  color: #e5d2f2;
+}
+.masthead a, .greedy-nav a, .page__footer a {
+  color: var(--plum-text);
+}
+.masthead a:hover, .greedy-nav a:hover, .page__footer a:hover {
+  color: var(--plum-accent);
+}
+hr, .masthead, .page__footer, .page__title {
+  border-color: var(--plum-border);
+}
+input, textarea, select, pre, code, blockquote, table {
+  border-color: var(--plum-border);
+}
+input, textarea, select, pre {
+  background-color: var(--plum-panel);
+  color: var(--plum-text);
+}
