@@ -1,6 +1,6 @@
 ---
 layout: single
-title: About
+title: Home
 description: About Jiayu Ellie Su.
 classes: wide
 author_profile: true
