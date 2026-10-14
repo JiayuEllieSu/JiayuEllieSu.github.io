@@ -55,6 +55,11 @@ A collection of my poems, essays, and thoughts.
 {% endif %}
 
 ## Philosophical Reflections
+
+*Blue to Blue: Death, Consciousness, and What Humanity Invents to Live* is a book of philosophy and poetry I'm currently working on. It explores how humans confront mortality, what makes a self, and how science, religion, and philosophy shape our attempts to understand death and find meaning in life. The manuscript pairs philosophical reflections with poems that approach the same questions through imagery and experience.
+
+The pieces below are excerpts from this work in progress.
+
 {% if reflections.size > 0 %}
 {% for entry in reflections %}
 <div class="creative-entry">
