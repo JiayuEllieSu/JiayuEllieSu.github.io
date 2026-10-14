@@ -20,7 +20,7 @@
 
 title: Jiayu Ellie Su
 description: Personal website of Jiayu Ellie Su.
-baseurl: "/" # the subpath of your site, e.g. /blog
+baseurl: "" # root-domain GitHub Pages site; keep empty to avoid double slashes
 url: "https://jiayuelliesu.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: JiayuEllieSu
 repository: "JiayuEllieSu/JiayuEllieSu.github.io"
