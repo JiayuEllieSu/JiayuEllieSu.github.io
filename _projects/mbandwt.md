@@ -1,16 +1,14 @@
 ---
 layout: single
-title: "mbandwt: M-Band Wavelet Transforms in Python"
-description: "An open-source Python package for M-band discrete wavelet transforms and perfect-reconstruction filter-bank experiments."
+title: "mbandwt: M-Band Transform Experiments"
+description: "A small Python experiment with M-channel signal decomposition and reconstruction."
 category: project
 date: 2026-10-13
 author_profile: true
 ---
 
-**mbandwt** is an experimental Python library for working with M-channel discrete wavelet transforms and FIR filter banks. It supports configurable numbers of subbands, one-level and multilevel transforms, inverse reconstruction, boundary-handling modes, and polyphase perfect-reconstruction diagnostics.
+**mbandwt** is a Python project exploring how a signal can be decomposed into multiple frequency bands and reconstructed from the resulting coefficients.
 
-The library is built with NumPy and SciPy and includes example scripts, mathematical conventions, and an automated test suite. I developed it as a small scientific-computing software project, with an emphasis on understandable interfaces and reproducible numerical checks.
+The basic example uses NumPy and a one-level orthogonal cosine block transform. It demonstrates the decomposition and inverse without attempting to implement a complete overlapping FIR wavelet filter bank.
 
-**Project links:** [Source code on GitHub](https://github.com/JiayuEllieSu/JiayuEllieSu.github.io/tree/main/software/mbandwt) · [README and installation instructions](https://github.com/JiayuEllieSu/JiayuEllieSu.github.io/blob/main/software/mbandwt/README.md)
-
-**Status:** v0.1.0, early source release. API subject to change; not published on PyPI.
+A link to the standalone public code repository will be added once it is set up.
