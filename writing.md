@@ -20,7 +20,7 @@ A collection of my poems, essays, and thoughts.
 {% for entry in poetry %}
 <div class="creative-entry">
   <h3><a href="{{ entry.url | relative_url }}">{{ entry.title | escape }}</a></h3>
-  {% if entry.date %}<p class="creative-entry__meta">{{ entry.date | date: "%B %Y" }}</p>{% endif %}
+  {% if entry.display_date %}<p class="creative-entry__meta">{{ entry.display_date | escape }}</p>{% elsif entry.date %}<p class="creative-entry__meta">{{ entry.date | date: "%B %Y" }}</p>{% endif %}
   {% if entry.description %}<p>{{ entry.description | escape }}</p>{% endif %}
 </div>
 {% endfor %}
