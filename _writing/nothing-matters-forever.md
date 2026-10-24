@@ -2,10 +2,12 @@
 layout: single
 title: "Nothing Matters Forever"
 category: reflection
-description: "A reflection on legacy, impermanence, and why meaning need not depend on eternity."
+description: "From Blue to Blue, my in-progress book of philosophy and poetry: a reflection on legacy, impermanence, and the limits of eternity."
 classes: wide
 author_profile: true
 ---
+
+*Excerpt from my in-progress book, **Blue to Blue: Death, Consciousness, and What Humanity Invents to Live**, a work of philosophy and poetry exploring mortality, consciousness, identity, and the ways people search for meaning in finite lives.*
 
 Legacy is often offered as a secular afterlife. Write a book. Raise children. Change a life. Build something useful. Leave the world different than it was.
 
