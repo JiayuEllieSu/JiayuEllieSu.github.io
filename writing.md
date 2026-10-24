@@ -10,9 +10,23 @@ author_profile: true
 A collection of my poems, essays, and thoughts.
 
 {% assign writing_items = site.writing | sort: "date" | reverse %}
+{% assign poetry = writing_items | where: "category", "poetry" %}
 {% assign essays = writing_items | where: "category", "essay" %}
 {% assign reflections = writing_items | where: "category", "reflection" %}
 {% assign creative_prose = writing_items | where: "category", "creative-prose" %}
+
+## Poetry
+{% if poetry.size > 0 %}
+{% for entry in poetry %}
+<div class="creative-entry">
+  <h3><a href="{{ entry.url | relative_url }}">{{ entry.title | escape }}</a></h3>
+  {% if entry.date %}<p class="creative-entry__meta">{{ entry.date | date: "%B %Y" }}</p>{% endif %}
+  {% if entry.description %}<p>{{ entry.description | escape }}</p>{% endif %}
+</div>
+{% endfor %}
+{% else %}
+<p class="creative-empty">Poems will appear here.</p>
+{% endif %}
 
 ## Essays
 {% if essays.size > 0 %}
