@@ -1,9 +1,9 @@
 ---
 layout: single
 title: "The Fundamental Theorem of Arithmetic in Euclidean Domains"
-description: "A collaborative mathematical exposition of unique factorization in Euclidean domains and applications."
-category: note
 date: 2026-10-29
+category: note
+description: "A collaborative mathematical exposition of unique factorization in Euclidean domains and applications."
 classes: wide
 author_profile: true
 ---
