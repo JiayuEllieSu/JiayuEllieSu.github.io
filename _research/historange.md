@@ -24,11 +24,11 @@ The framework separates **interaction detection** from **effective-range estimat
 
 One model component takes the form
 
-\[
+$
 -\nabla\cdot\bigl(A(x)\nabla u(x)\bigr) + \ell^{-2}u(x) = q(x),
-\]
+$
 
-where \(A(x)\) represents local anisotropic tissue transport, \(q(x)\) is a ligand source field, and \(\ell\) is a candidate signaling-length scale.
+where $A(x)$ represents local anisotropic tissue transport, $q(x)$ is a ligand source field, and $\ell$ is a candidate signaling-length scale.
 
 ## Why this interested me
 
