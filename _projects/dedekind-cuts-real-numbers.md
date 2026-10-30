@@ -1,9 +1,9 @@
 ---
 layout: single
 title: "Construction of the Real Numbers from the Rational Numbers"
-description: "An expository mathematics paper constructing the real numbers using Dedekind cuts."
-category: note
 date: 2026-10-29
+category: note
+description: "An expository mathematics paper constructing the real numbers using Dedekind cuts."
 classes: wide
 author_profile: true
 ---
