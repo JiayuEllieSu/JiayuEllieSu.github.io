@@ -3,12 +3,12 @@ layout: single
 title: "Math in Music Theory"
 date: 2026-01-14
 category: note
-description: "A Math Club lecture I gave on January 14, 2026, to an audience of approximately 15 people, exploring mathematical structures underlying music."
+description: "A Math Club lecture I gave in January 2026, exploring mathematical structures underlying music."
 classes: wide
 author_profile: true
 ---
 
-**Presented:** January 14, 2026, School Math Club  
+**Presented:** January 2026, School Math Club  
 **Audience:** Approximately 15 people  
 **Format:** Approximately 20-minute lecture, 17 slides
 
