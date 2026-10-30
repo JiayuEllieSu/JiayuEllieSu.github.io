@@ -10,6 +10,7 @@ The source for [jiayuelliesu.github.io](https://jiayuelliesu.github.io), a Jekyl
 - `_music/`: compositions and music pages
 - `_posts/`: published blog posts
 - `_drafts/`: unfinished posts, not published by default
+- `_draft_projects/`: unfinished project entries, excluded from the website (but still visible in this public repository)
 - `assets/`: PDFs, audio, stylesheets, and other public assets
 
 Pages such as `projects.md` and `music.md` automatically list their respective collections. See [HOW_TO_PUBLISH.md](HOW_TO_PUBLISH.md) for instructions.
