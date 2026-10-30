@@ -28,7 +28,7 @@ $$
 -\nabla\cdot\bigl(A(x)\nabla u(x)\bigr) + \ell^{-2}u(x) = q(x),
 $$
 
-where $$A(x)$$ represents local anisotropic tissue transport, $$q(x)$$ is a ligand source field, and $$\ell$$ is a candidate signaling-length scale.
+where $A(x)$ is the spatially varying anisotropic transport tensor, $q(x)$ is the ligand source field, and $\ell$ is the candidate signaling-length scale.
 
 ## Why this interested me
 
