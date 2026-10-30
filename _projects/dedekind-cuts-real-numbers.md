@@ -9,7 +9,7 @@ author_profile: true
 ---
 
 **Author:** Ellie Su  
-**Program:** Ross Mathematics Program  
+**Program:** Summer math program  
 **Type:** Mathematical exposition
 
 This paper develops a construction of the real numbers starting from the rational numbers. It uses **Dedekind cuts** to describe both rational and irrational numbers as subsets of the rationals, then defines arithmetic and order on these cuts.
