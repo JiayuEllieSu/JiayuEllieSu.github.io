@@ -102,3 +102,4 @@ plugins:
 # Keep the Python library in GitHub without publishing it as Jekyll pages.
 exclude:
   - software
+  - _draft_projects
