@@ -29,6 +29,4 @@ The initial command-line program focuses on tile representation and validation:
 4. **Tile probabilities:** use visible and unseen tile counts to estimate the likelihood of useful draws.
 5. **Simulation:** explore Monte Carlo methods for comparing strategies under uncertainty.
 
-This is an **in-progress learning project**, not yet a complete hand evaluator or strategic game-playing engine. I'm using it to gain experience with C++ data structures, search algorithms, and probabilistic decision-making.
-
 **[View the code on GitHub](https://github.com/JiayuEllieSu/mahjong-analyzer)**
