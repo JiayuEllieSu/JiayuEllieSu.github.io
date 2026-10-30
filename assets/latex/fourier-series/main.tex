@@ -1,0 +1,326 @@
+\documentclass[11pt]{article}
+
+% ---------- Basic packages ----------
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[margin=1in,headheight=15pt]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots}
+\pgfplotsset{compat=1.18}
+\usepackage[most]{tcolorbox}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
+\usepackage{float}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+% ---------- Document information ----------
+\author{Ellie Su}
+\hypersetup{
+    pdftitle={Fourier Series: From Orthogonal Vectors to Heat Flow},
+    pdfauthor={Ellie Su and Dawon Suh}
+}
+
+% ---------- Colors ----------
+\definecolor{deepblue}{HTML}{315A78}
+\definecolor{softblue}{HTML}{EFF7FC}
+
+\definecolor{purple}{HTML}{745A8D}
+\definecolor{softpurple}{HTML}{F5F0FA}
+
+\definecolor{green}{HTML}{527A63}
+\definecolor{softgreen}{HTML}{EFF8F3}
+
+\definecolor{pink}{HTML}{A76578}
+\definecolor{softpink}{HTML}{FFF2F5}
+
+\definecolor{gold}{HTML}{A78032}
+\definecolor{softyellow}{HTML}{FFF9E8}
+
+\definecolor{softgray}{HTML}{F7F7F7}
+\definecolor{grayborder}{HTML}{888888}
+
+% ---------- Theorem environments ----------
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{salvage}[theorem]{Salvage}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% ---------- Proof-style environments ----------
+\newenvironment{disproof}
+    {\begin{proof}[Disproof]}
+    {\end{proof}}
+
+\newenvironment{solution}
+    {\begin{proof}[Solution]}
+    {\end{proof}}
+
+% ---------- General box style ----------
+\tcbset{
+    mathematicalbox/.style={
+        enhanced,
+        breakable,
+        boxrule=0.8pt,
+        arc=2.5mm,
+        left=10pt,
+        right=10pt,
+        top=8pt,
+        bottom=8pt,
+        before skip=10pt,
+        after skip=10pt,
+        fonttitle=\bfseries
+    }
+}
+
+% ---------- General-purpose box ----------
+\newtcolorbox{mathbox}[1][]{
+    mathematicalbox,
+    colback=white,
+    colframe=deepblue,
+    coltitle=deepblue,
+    borderline west={3pt}{0pt}{deepblue},
+    #1
+}
+
+% ---------- Theorem and proposition boxes ----------
+\tcolorboxenvironment{theorem}{
+    mathematicalbox,
+    colback=softblue,
+    colframe=deepblue,
+    borderline west={3pt}{0pt}{deepblue}
+}
+
+\tcolorboxenvironment{proposition}{
+    mathematicalbox,
+    colback=softblue,
+    colframe=deepblue,
+    borderline west={3pt}{0pt}{deepblue}
+}
+
+% ---------- Lemma boxes ----------
+\tcolorboxenvironment{lemma}{
+    mathematicalbox,
+    colback=softpurple,
+    colframe=purple,
+    borderline west={3pt}{0pt}{purple}
+}
+
+% ---------- Corollary boxes ----------
+\tcolorboxenvironment{corollary}{
+    mathematicalbox,
+    colback=softgreen,
+    colframe=green,
+    borderline west={3pt}{0pt}{green}
+}
+
+% ---------- Definition boxes ----------
+\tcolorboxenvironment{definition}{
+    mathematicalbox,
+    colback=softpink,
+    colframe=pink,
+    borderline west={3pt}{0pt}{pink}
+}
+
+% ---------- Example boxes ----------
+\tcolorboxenvironment{example}{
+    mathematicalbox,
+    colback=softgreen,
+    colframe=green,
+    borderline west={3pt}{0pt}{green}
+}
+
+% ---------- Problem boxes ----------
+\tcolorboxenvironment{problem}{
+    mathematicalbox,
+    colback=softyellow,
+    colframe=gold,
+    borderline west={3pt}{0pt}{gold}
+}
+
+% ---------- Salvage boxes ----------
+\tcolorboxenvironment{salvage}{
+    mathematicalbox,
+    colback=softpurple,
+    colframe=purple,
+    borderline west={3pt}{0pt}{purple}
+}
+
+% ---------- Remark boxes ----------
+\tcolorboxenvironment{remark}{
+    enhanced,
+    breakable,
+    colback=white,
+    colframe=grayborder,
+    boxrule=0.7pt,
+    arc=2.5mm,
+    left=10pt,
+    right=10pt,
+    top=8pt,
+    bottom=8pt,
+    before skip=10pt,
+    after skip=10pt,
+    frame style={
+        dash pattern=on 3pt off 2pt
+    }
+}
+
+% ---------- Proof, disproof, and solution boxes ----------
+\tcolorboxenvironment{proof}{
+    enhanced,
+    breakable,
+    colback=softgray,
+    colframe=grayborder,
+    boxrule=0.5pt,
+    arc=2mm,
+    left=10pt,
+    right=10pt,
+    top=8pt,
+    bottom=8pt,
+    before skip=8pt,
+    after skip=10pt,
+    borderline west={2pt}{0pt}{grayborder}
+}
+
+% ---------- Section headings ----------
+\titleformat{\section}
+    {\Large\bfseries\color{deepblue}}
+    {\thesection.}
+    {0.5em}
+    {}
+    [\vspace{2pt}\color{deepblue}\titlerule]
+
+\titleformat{name=\section,numberless}
+    {\Large\bfseries\color{deepblue}}
+    {}
+    {0pt}
+    {}
+    [\vspace{2pt}\color{deepblue}\titlerule]
+
+\titleformat{\subsection}
+    {\large\bfseries\color{purple}}
+    {\thesubsection.}
+    {0.5em}
+    {}
+
+\titleformat{name=\subsection,numberless}
+    {\large\bfseries\color{purple}}
+    {}
+    {0pt}
+    {}
+
+\titlespacing*{\section}
+    {0pt}
+    {18pt}
+    {8pt}
+
+\titlespacing*{\subsection}
+    {0pt}
+    {14pt}
+    {5pt}
+
+% ---------- Lists ----------
+\setlist[enumerate]{
+    itemsep=3pt,
+    topsep=5pt,
+    leftmargin=*
+}
+
+\setlist[itemize]{
+    itemsep=3pt,
+    topsep=5pt,
+    leftmargin=*
+}
+
+% ---------- Header and footer ----------
+\pagestyle{fancy}
+\fancyhf{}
+
+\fancyhead[L]{
+    \small\textcolor{deepblue}{HRK notes}
+}
+
+\fancyhead[R]{
+    \small\textcolor{deepblue}{Ellie Su}
+}
+
+\fancyfoot[C]{
+    \small\textcolor{grayborder}{\thepage}
+}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% ---------- Custom title ----------
+\newcommand{\settitle}[2]{%
+    \thispagestyle{fancy}
+
+    \begingroup
+    \centering
+
+    \vspace*{-0.65cm}
+
+    {\color{deepblue}
+    \rule{0.72\textwidth}{1.1pt}\par}
+
+    \vspace{0.35cm}
+
+    {\fontsize{30}{34}\selectfont
+    \bfseries
+    \color{deepblue}
+    #1\par}
+
+    \vspace{0.2cm}
+
+    {\small
+    \color{grayborder}
+    #2\par}
+
+    \vspace{0.35cm}
+
+    {\color{deepblue}
+    \rule{0.72\textwidth}{0.7pt}\par}
+
+    \vspace{0.5cm}
+
+    \endgroup
+}
+
+% ---------- Notation ----------
+\numberwithin{equation}{section}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ee}{\mathrm{e}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\ip}[2]{\left\langle#1,#2\right\rangle}
+\newcommand{\mean}[1]{\overline{#1}}
+\DeclareMathOperator{\sgn}{sgn}
+
+% ---------- Document ----------
+\begin{document}
+
+\settitle{Fourier Series}{From Orthogonal Vectors to Heat Flow\\[3pt]
+Ellie Su and Dawon Suh \quad | \quad July 2026}
+
+\input{chpt21}
+
+\end{document}
