@@ -9,7 +9,7 @@ author_profile: true
 ---
 
 **Authors:** Lin Chen, Anika Sharma, and Ellie Su  
-**Program:** Ross Mathematics Program  
+**Program:** Summer math program  
 **Type:** Collaborative mathematical exposition
 
 This paper explores how **unique factorization** extends beyond the integers to Euclidean domains. It develops the chain of ideas from division with remainder and the Euclidean algorithm through Bézout's identity and Euclid's lemma to the existence and uniqueness of irreducible factorizations.
