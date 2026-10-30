@@ -8,9 +8,12 @@ classes: wide
 author_profile: true
 ---
 
-**Presented:** January 2026, School Math Club  
+**Presented:** January 2026  
+**Presenter:** Ellie Su  
+**Setting:** School Math Club  
 **Audience:** Approximately 15 people  
-**Format:** Approximately 20-minute lecture, 17 slides
+**Duration:** Approximately 20 minutes  
+**Materials:** 17 lecture slides
 
 I gave a Math Club lecture on the mathematical ideas underlying music theory, drawing on my interests in both mathematics and music. The talk explored how the frequencies of sound waves translate into musical pitch, why octaves and semitones are naturally described using logarithms, and how pitch classes, transposition, and inversion can be modeled using arithmetic modulo 12.
 
