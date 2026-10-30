@@ -16,10 +16,4 @@ I gave a Math Club lecture on the mathematical ideas underlying music theory, dr
 
 I also discussed the circle of fifths, frequency ratios and consonance, the overlap of harmonics, and how Fourier series help explain why instruments playing the same pitch can have different timbres.
 
-{% assign slides_path = '/assets/mathinmusic (1).pdf' %}
-{% assign slides = site.static_files | where: "path", slides_path | first %}
-{% if slides %}
-<a href="{{ '/assets/mathinmusic%20%281%29.pdf' | relative_url }}">View the lecture slides (PDF)</a>
-{% else %}
-*Lecture slides will be available here soon.*
-{% endif %}
+[View the lecture slides (PDF)]({{ '/assets/mathinmusic%20%281%29.pdf' | relative_url }})
