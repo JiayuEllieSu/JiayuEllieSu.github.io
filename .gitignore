@@ -1,5 +1,27 @@
-_site
-.sass-cache
-.jekyll-cache
+# Jekyll / Sass generated files
+_site/
+.sass-cache/
+.jekyll-cache/
 .jekyll-metadata
-vendor
+
+# Locally installed dependencies. Install with Bundler instead of committing them.
+_vendor/
+vendor/
+.bundle/
+node_modules/
+
+# Editor and operating-system files
+.DS_Store
+*.swp
+*.swo
+
+# LaTeX build intermediates. Keep finished lecture PDFs in assets/papers/.
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc

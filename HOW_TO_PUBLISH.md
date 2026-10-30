@@ -1,43 +1,54 @@
 # Publishing guide
 
-Your homepage and navigation are already set up. **Do not edit the page layouts** when adding content.
+This site uses Jekyll collections. Add a Markdown file with YAML front matter to the appropriate directory, then commit. The index pages list entries automatically.
 
-## Add a new entry
+## Add an entry
 
-1. Open the [GitHub repository](https://github.com/JiayuEllieSu/JiayuEllieSu.github.io).
-2. Open the appropriate file in `_templates/` and copy its contents.
-3. In GitHub choose **Add file → Create new file** and enter a path:
+1. Open the [repository](https://github.com/JiayuEllieSu/JiayuEllieSu.github.io).
+2. Copy a suitable starter file from `_templates/`.
+3. Create a Markdown file in the appropriate directory:
    - `_research/your-title.md` for research
-   - `_projects/your-title.md` for projects or notes
+   - `_projects/your-title.md` for projects, notes, and lectures
    - `_writing/your-title.md` for poetry, essays, or reflections
-   - `_music/your-title.md` for compositions, recordings, or scores
-   - `_posts/YYYY-MM-DD-your-title.md` for blog posts
-4. Paste the template, replace the sample title, date, description, and body, and commit the file. A new page and corresponding index entry will be generated automatically.
-5. Check **Actions** for a successful Pages deployment, then visit the relevant section.
+   - `_music/your-title.md` for compositions and scores
+   - `_posts/YYYY-MM-DD-your-title.md` for published blog posts
+   - `_drafts/your-title.md` for unfinished blog posts
+4. Replace the template title, date, description, and body. Commit the file.
+5. Check the website and the repository's Actions tab after deployment.
 
-**Important:** `_templates/` contains examples only. They do not publish until you create a file in a collection.
+Unfinished blog posts in `_drafts/` remain in the repository but do not appear on the public site by default.
 
-## Categories (exact spelling)
+## Categories
 
 - Projects: `project` or `note`
 - Writing: `poetry`, `essay`, or `reflection`
 - Music: `composition`, `recording`, or `sheet-music`
-- Blog: use `categories: [mathematics]`, or other topics of your choice. Keep `author: "Jiayu Ellie Su"` so your post appears in the blog list.
+- Blog: `categories: [mathematics]` or another appropriate category. Use `author: "Jiayu Ellie Su"` because the blog index filters by author.
 
-## Upload files
+## PDFs, music, and other files
 
-For audio, PDFs, scores, images, or posters, upload to `assets/music/` or another suitable folder in `assets/` and link to them using `{{ '/assets/music/file.mp3' | relative_url }}` in your entry. If a folder does not yet exist, GitHub lets you create it as part of uploading a file.
+Upload public assets into a clearly named folder inside `assets/`, preferably:
 
-Only publish files and material that you have permission to share. Don't publish drafts, personal contact information, or private schoolwork unintentionally.
+- `assets/papers/` for PDFs and lecture notes
+- `assets/music/` for future audio and scores
 
-## Editing later
+Link with a relative URL, for example:
 
-Open the published Markdown file in GitHub, click its pencil icon, edit, and commit. The index updates automatically. Removing an entry's file removes it from the generated index at the next deployment.
+```liquid
+[Read the paper]({{ '/assets/papers/example.pdf' | relative_url }})
+```
 
-## Blog and the original fork
+The existing Fourier series lecture PDF is built from `assets/latex/fourier-series/` by a GitHub Actions workflow. Editing the LaTeX source triggers a PDF rebuild.
 
-Only posts with `author: "Jiayu Ellie Su"` appear in the main Blog listing. The old author's `_posts/` files still exist in this fork and may be reachable at their direct URLs; review and remove them separately when ready. The existing blog format is preserved.
+## Local preview
 
-## Working with ChatGPT
+```sh
+bundle install
+bundle exec jekyll serve
+```
 
-You can also tell ChatGPT, for example, "Add this poem to Writing under Poetry" or "Publish this composition with this audio file." Review the draft, then ask ChatGPT to publish it to the connected GitHub repository.
+Generated dependencies, build caches, and the output directory are excluded from version control.
+
+## Update or unpublish a page
+
+Edit its Markdown source and commit. To unpublish a draft blog post without discarding the writing, move it to `_drafts/`. Do not publish private information, unpublished research results, or work without permission to share.
