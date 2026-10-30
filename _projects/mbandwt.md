@@ -20,6 +20,14 @@ The project began with a one-level orthogonal cosine *block* transform in NumPy.
 - **Filter families:** two-channel Haar and Daubechies examples, plus M-channel cosine, lapped, and paraunitary constructions.
 - **Experiments:** frequency responses, coefficient energies, boundary extension, padding, and reconstruction error.
 
+
+## Expository paper
+
+I wrote a companion exposition, *From Fourier Analysis to M-Band Wavelets: Multiresolution and Perfect-Reconstruction Filter Banks* (October 2026). It develops the Haar and Daubechies transforms from orthogonal decompositions, extends the discussion to general M-band FIR filter banks, and examines vanishing moments, polyphase matrices, and perfect reconstruction. The final sections explain how these ideas appear in `mbandwt`, with numerical illustrations of frequency responses and multilevel signal decomposition.
+
+**[Read the exposition (PDF)](https://github.com/JiayuEllieSu/mbandwt/blob/main/docs/paper/mband_wavelets.pdf)**  
+[LaTeX source](https://github.com/JiayuEllieSu/mbandwt/blob/main/docs/paper/mband_wavelets.tex) | [Reproduce the figures](https://github.com/JiayuEllieSu/mbandwt/blob/main/docs/paper/generate_figures.py)
+
 ## Example: three bands, four levels
 
 ```python
