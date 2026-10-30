@@ -2,12 +2,12 @@
 layout: single
 title: "The Table Will Be Cleared"
 category: essay
-description: "Written at Ross after a student lecture on the history of mathematics: a reflection on the Scottish Café, impermanence, and why we do mathematics."
+description: "Written during a summer math program after a student lecture on the history of mathematics: a reflection on the Scottish Café, impermanence, and why we do mathematics."
 classes: wide
 author_profile: true
 ---
 
-*I wrote this at the Ross Mathematics Program after attending a student lecture on the history of mathematics. The lecture inspired me to reflect on the Scottish Café, the fragility of mathematical knowledge, and why mathematics can matter even when nothing lasts forever.*
+*I wrote this during a summer math program after attending a student lecture on the history of mathematics. The lecture inspired me to reflect on the Scottish Café, the fragility of mathematical knowledge, and why mathematics can matter even when nothing lasts forever.*
 
 Every night, the equations disappeared.
 
@@ -27,7 +27,7 @@ Humanity may last for thousands or millions of years, but not indefinitely. Give
 
 This thought does not make me want to stop doing mathematics. It makes me suspicious of any explanation that depends on permanence.
 
-At Ross, my lecturer, Timothy All, described mathematics as a way of honoring the human spirit. We do it, in some sense, because we can.
+During the program, my lecturer, Timothy All, described mathematics as a way of honoring the human spirit. We do it, in some sense, because we can.
 
 I initially thought “because we can” sounded almost dismissive. It seemed weaker than saying that mathematics improves civilization or reveals universal truth. But I have come to think that it may be the more fundamental answer. Human beings possess the ability to ask questions that are not forced upon us by immediate survival. We can imagine objects that have no physical form, reason about dimensions we cannot see, and establish conclusions about infinite structures using finite arguments. We can begin with a definition and discover that it contains consequences no one noticed before.
 
