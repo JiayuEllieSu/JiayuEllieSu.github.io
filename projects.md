@@ -7,7 +7,7 @@ classes: wide
 author_profile: true
 ---
 
-Projects, experiments, and things I'm learning.
+A collection of projects, lecture notes, and things I've explored outside of my formal research. I've always loved teaching and sharing what I've learned with others, whether through giving lectures, explaining concepts, or simply discussing ideas. I find that preparing to teach something often helps me understand it more deeply myself. I also enjoy programming, both as a way to experiment with ideas and as an opportunity to build things from scratch. Most of these projects began with something I was curious about, whether that meant working through a proof, implementing an algorithm, or exploring a topic well enough to explain it to someone else.
 
 {% assign entries = site.projects | sort: "date" | reverse %}
 {% assign projects = entries | where: "category", "project" %}
