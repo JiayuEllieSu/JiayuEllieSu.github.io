@@ -18,10 +18,4 @@ We used **sawtooth, square, and triangle waves** to illustrate how periodic func
 
 As an application, we used Fourier series to **solve the heat equation on a circular rod**, showing how each spatial frequency evolves independently, why higher-frequency temperature fluctuations dissipate more quickly, and why the average temperature stays constant in an insulated system.
 
-{% assign handout_path = '/assets/papers/fourier-series-lecture-notes.pdf' %}
-{% assign handout = site.static_files | where: "path", handout_path | first %}
-{% if handout %}
-**[Read the lecture notes (PDF, 12 pages)]({{ handout_path | relative_url }})**
-{% else %}
-*Lecture handout PDF will be added here.*
-{% endif %}
+**[Read the lecture notes (PDF, 12 pages)]({{ '/assets/papers/fourier-series-lecture-notes.pdf' | relative_url }})
