@@ -1,16 +1,16 @@
 ---
 layout: single
 title: "Fourier Series: From Orthogonal Vectors to Heat Flow"
-date: 2026-10-30
+date: 2026-07-01
 category: note
-description: "A joint lecture I gave with Dawon Suh in July 2026, introducing Fourier series through orthogonality and applying them to the heat equation."
+description: "A lecture Dawon Suh and I gave in July 2026, introducing Fourier series and their application to the heat equation."
 classes: wide
 author_profile: true
 ---
 
 **Presented:** July 2026  
-**Co-presenters:** Ellie Su and Dawon Suh  
-**Format:** Collaborative mathematics lecture, with a 12-page handout
+**Presenters:** Ellie Su and Dawon Suh  
+**Materials:** 12-page lecture handout
 
 In July 2026, **Dawon Suh and I gave a lecture on Fourier series**, beginning with the analogy between vectors and functions. We introduced inner products and orthogonality, then derived the complex Fourier coefficient formula by projecting a function onto its exponential modes.
 
