@@ -1,0 +1,41 @@
+name: Build Fourier series lecture PDF
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'assets/latex/fourier-series/**'
+      - '.github/workflows/build-fourier-lecture.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out website
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Compile lecture notes
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: main.tex
+          working_directory: assets/latex/fourier-series
+          latexmk_use_xelatex: false
+          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
+
+      - name: Publish compiled PDF
+        run: |
+          mkdir -p assets/papers
+          cp assets/latex/fourier-series/main.pdf assets/papers/fourier-series-lecture-notes.pdf
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/papers/fourier-series-lecture-notes.pdf
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish Fourier series lecture PDF"
+            git push
+          fi
