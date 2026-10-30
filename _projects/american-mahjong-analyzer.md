@@ -12,15 +12,6 @@ author_profile: true
 
 Unlike Mahjong variants with a fixed set of winning structures, American Mahjong uses a card of designated hands that changes by year. That makes card-pattern representation and rule-aware matching essential parts of the problem.
 
-## Current implementation
-
-The initial command-line program focuses on tile representation and validation:
-
-- **Tile types:** C++ `enum class` and `struct` definitions for numbered tiles, winds, dragons, flowers, and jokers.
-- **Hand input:** parsing user-entered tiles into a structured hand.
-- **Physical tile limits:** rejecting hands with more copies of a tile than exist in a set.
-- **Frequency counting:** a 36-entry array representing the number of copies of each tile type.
-
 ## Planned algorithms
 
 1. **Card-based hand matching:** encode target patterns and measure how many tiles are needed to complete each one.
