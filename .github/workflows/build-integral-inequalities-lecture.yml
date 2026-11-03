@@ -1,0 +1,41 @@
+name: Build integral inequalities lecture PDF
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'assets/latex/integral-inequalities/**'
+      - '.github/workflows/build-integral-inequalities-lecture.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out website
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Compile lecture notes
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: main.tex
+          working_directory: assets/latex/integral-inequalities
+          latexmk_use_xelatex: false
+          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
+
+      - name: Publish compiled PDF
+        run: |
+          mkdir -p assets/papers
+          cp assets/latex/integral-inequalities/main.pdf assets/papers/integral-inequalities-lecture-notes.pdf
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/papers/integral-inequalities-lecture-notes.pdf
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish integral inequalities lecture PDF"
+            git push
+          fi
