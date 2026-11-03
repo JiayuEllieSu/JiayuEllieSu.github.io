@@ -18,3 +18,4 @@ In November 2026, I gave a lecture in my Fluid Mechanics class on **mass conserv
 
 The lecture developed the **continuity equation** using a small rectangular control volume and explained the incompressibility condition, including why a steady flow can still accelerate. We concluded with physics olympiad applications involving a falling water jet and a draining cylinder.
 
+**[Read the lecture handout (PDF)]({{ '/assets/papers/mass-conservation-differential-formulation.pdf' | relative_url }})**
