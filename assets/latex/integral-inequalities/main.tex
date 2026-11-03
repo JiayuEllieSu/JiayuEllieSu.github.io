@@ -1,0 +1,551 @@
+\documentclass[11pt]{article}
+
+% ---------- Basic packages ----------
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[margin=1in,headheight=15pt]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots}
+\pgfplotsset{compat=1.18}
+\usepackage[most]{tcolorbox}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
+\usepackage{float}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+% ---------- Document information ----------
+\author{Ellie Su}
+\hypersetup{
+    pdftitle={Integral Inequalities},
+    pdfauthor={Ellie Su}
+}
+
+% ---------- Colors ----------
+\definecolor{deepblue}{HTML}{315A78}
+\definecolor{softblue}{HTML}{EFF7FC}
+\definecolor{purple}{HTML}{745A8D}
+\definecolor{softpurple}{HTML}{F5F0FA}
+\definecolor{green}{HTML}{527A63}
+\definecolor{softgreen}{HTML}{EFF8F3}
+\definecolor{pink}{HTML}{A76578}
+\definecolor{softpink}{HTML}{FFF2F5}
+\definecolor{gold}{HTML}{A78032}
+\definecolor{softyellow}{HTML}{FFF9E8}
+\definecolor{softgray}{HTML}{F7F7F7}
+\definecolor{grayborder}{HTML}{888888}
+
+% ---------- Theorem heading styles (no parentheses around titles) ----------
+\newtheoremstyle{plaincolon}
+    {6pt}{6pt}{\itshape}{}{\bfseries}{.}{0.5em}
+    {\thmname{#1}\thmnumber{ #2}\thmnote{: #3}}
+\newtheoremstyle{definitioncolon}
+    {6pt}{6pt}{}{}{\bfseries}{.}{0.5em}
+    {\thmname{#1}\thmnumber{ #2}\thmnote{: #3}}
+\newtheoremstyle{remarkcolon}
+    {6pt}{6pt}{}{}{\itshape}{.}{0.5em}
+    {\thmname{#1}\thmnumber{ #2}\thmnote{: #3}}
+
+% ---------- Theorem environments ----------
+\theoremstyle{plaincolon}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definitioncolon}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{problem}{Problem} % independent numbering: 1, ..., 10
+\newtheorem{salvage}[theorem]{Salvage}
+\theoremstyle{remarkcolon}
+\newtheorem{remark}[theorem]{Remark}
+
+% ---------- Proof-style environments ----------
+\newenvironment{disproof}{\begin{proof}[Disproof]}{\end{proof}}
+\newenvironment{solution}{\begin{proof}[Solution]}{\end{proof}}
+
+% ---------- General box style ----------
+\tcbset{
+    mathematicalbox/.style={
+        enhanced,
+        breakable,
+        boxrule=0.8pt,
+        arc=2.5mm,
+        left=10pt,
+        right=10pt,
+        top=8pt,
+        bottom=8pt,
+        before skip=10pt,
+        after skip=10pt,
+        fonttitle=\bfseries
+    }
+}
+
+% ---------- General-purpose box ----------
+\newtcolorbox{mathbox}[1][]{
+    mathematicalbox,
+    colback=white,
+    colframe=deepblue,
+    coltitle=deepblue,
+    borderline west={3pt}{0pt}{deepblue},
+    #1
+}
+
+% ---------- Theorem and proposition boxes ----------
+\tcolorboxenvironment{theorem}{
+    mathematicalbox,
+    colback=softblue,
+    colframe=deepblue,
+    borderline west={3pt}{0pt}{deepblue}
+}
+\tcolorboxenvironment{proposition}{
+    mathematicalbox,
+    colback=softblue,
+    colframe=deepblue,
+    borderline west={3pt}{0pt}{deepblue}
+}
+% ---------- Lemma boxes ----------
+\tcolorboxenvironment{lemma}{
+    mathematicalbox,
+    colback=softpurple,
+    colframe=purple,
+    borderline west={3pt}{0pt}{purple}
+}
+% ---------- Corollary boxes ----------
+\tcolorboxenvironment{corollary}{
+    mathematicalbox,
+    colback=softgreen,
+    colframe=green,
+    borderline west={3pt}{0pt}{green}
+}
+% ---------- Definition boxes ----------
+\tcolorboxenvironment{definition}{
+    mathematicalbox,
+    colback=softpink,
+    colframe=pink,
+    borderline west={3pt}{0pt}{pink}
+}
+% ---------- Example boxes ----------
+\tcolorboxenvironment{example}{
+    mathematicalbox,
+    colback=softgreen,
+    colframe=green,
+    borderline west={3pt}{0pt}{green}
+}
+% ---------- Problem boxes ----------
+\tcolorboxenvironment{problem}{
+    mathematicalbox,
+    colback=softyellow,
+    colframe=gold,
+    borderline west={3pt}{0pt}{gold}
+}
+% ---------- Salvage boxes ----------
+\tcolorboxenvironment{salvage}{
+    mathematicalbox,
+    colback=softpurple,
+    colframe=purple,
+    borderline west={3pt}{0pt}{purple}
+}
+% ---------- Remark boxes ----------
+\tcolorboxenvironment{remark}{
+    enhanced,
+    breakable,
+    colback=white,
+    colframe=grayborder,
+    boxrule=0.7pt,
+    arc=2.5mm,
+    left=10pt,
+    right=10pt,
+    top=8pt,
+    bottom=8pt,
+    before skip=10pt,
+    after skip=10pt,
+    frame style={dash pattern=on 3pt off 2pt}
+}
+% ---------- Proof, disproof, and solution boxes ----------
+\tcolorboxenvironment{proof}{
+    enhanced,
+    breakable,
+    colback=softgray,
+    colframe=grayborder,
+    boxrule=0.5pt,
+    arc=2mm,
+    left=10pt,
+    right=10pt,
+    top=8pt,
+    bottom=8pt,
+    before skip=8pt,
+    after skip=10pt,
+    borderline west={2pt}{0pt}{grayborder}
+}
+
+% ---------- Section headings ----------
+\titleformat{\section}
+    {\Large\bfseries\color{deepblue}}
+    {\thesection.}{0.5em}{}
+    [\vspace{2pt}\color{deepblue}\titlerule]
+\titleformat{name=\section,numberless}
+    {\Large\bfseries\color{deepblue}}
+    {}{0pt}{}
+    [\vspace{2pt}\color{deepblue}\titlerule]
+\titleformat{\subsection}
+    {\large\bfseries\color{purple}}
+    {\thesubsection.}{0.5em}{}
+\titleformat{name=\subsection,numberless}
+    {\large\bfseries\color{purple}}
+    {}{0pt}{}
+\titlespacing*{\section}{0pt}{18pt}{8pt}
+\titlespacing*{\subsection}{0pt}{14pt}{5pt}
+
+% ---------- Lists ----------
+\setlist[enumerate]{itemsep=3pt,topsep=5pt,leftmargin=*}
+\setlist[itemize]{itemsep=3pt,topsep=5pt,leftmargin=*}
+
+% ---------- Header and footer ----------
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textcolor{deepblue}{Integral Inequalities}}
+\fancyhead[R]{\small\textcolor{deepblue}{Ellie Su}}
+\fancyfoot[C]{\small\textcolor{grayborder}{\thepage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% ---------- Custom title ----------
+\newcommand{\settitle}[2]{%
+    \thispagestyle{fancy}
+    \begingroup
+    \centering
+    \vspace*{-0.65cm}
+    {\color{deepblue}\rule{0.72\textwidth}{1.1pt}\par}
+    \vspace{0.35cm}
+    {\fontsize{30}{34}\selectfont\bfseries\color{deepblue}#1\par}
+    \vspace{0.2cm}
+    {\small\color{grayborder}#2\par}
+    \vspace{0.35cm}
+    {\color{deepblue}\rule{0.72\textwidth}{0.7pt}\par}
+    \vspace{0.5cm}
+    \endgroup
+}
+
+% ---------- Notation ----------
+\numberwithin{equation}{section}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ee}{\mathrm{e}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\ip}[2]{\left\langle#1,#2\right\rangle}
+\newcommand{\mean}[1]{\overline{#1}}
+\DeclareMathOperator{\sgn}{sgn}
+
+\begin{document}
+\settitle{Integral Inequalities}{Ellie Su \quad | \quad June 2026}
+
+\begin{mathbox}
+\textbf{The central idea.} Many inequalities for finite sums continue to hold when sums are replaced with integrals. The main challenge is to recognize the right structure: a square, a product, a convex function, or a pair of similarly ordered functions. Equality cases are often as important as the inequality itself.
+
+Unless otherwise specified, functions are real-valued and continuous on the indicated interval.
+\end{mathbox}
+
+\section{Nonnegativity and Completing the Square}
+
+\begin{proposition}[Nonnegativity of squares]
+For any continuous real-valued function $h$ on $[a,b]$,
+\[
+\int_a^b h(x)^2\,dx\ge 0,
+\]
+with equality if and only if $h(x)=0$ for every $x\in[a,b]$.
+\end{proposition}
+
+The principle becomes powerful when we can rewrite a complicated expression as a constant minus the square of another expression.
+
+\begin{example}[A sharp quadratic bound]
+For any continuous real-valued function $f$ on $[0,1]$, show that
+\[
+\int_0^1 f(x)(x-f(x))\,dx\le\frac1{12},
+\]
+and determine when equality holds.
+\end{example}
+
+\begin{solution}
+Complete the square pointwise:
+\[
+f(x)(x-f(x))=\frac{x^2}{4}-\left(f(x)-\frac{x}{2}\right)^2.
+\]
+Thus
+\[
+\int_0^1 f(x)(x-f(x))\,dx
+=\frac1{12}-\int_0^1\left(f(x)-\frac{x}{2}\right)^2dx
+\le\frac1{12}.
+\]
+Equality holds precisely when $f(x)=x/2$ for all $x\in[0,1]$.
+\end{solution}
+
+\section{The Cauchy--Schwarz Inequality}
+
+\begin{theorem}[Integral Cauchy--Schwarz]
+For square-integrable real-valued functions $f$ and $g$ on $[a,b]$,
+\[
+\left(\int_a^b f(x)g(x)\,dx\right)^2\le
+\left(\int_a^b f(x)^2\,dx\right)
+\left(\int_a^b g(x)^2\,dx\right).
+\]
+Equality holds when $f$ and $g$ are proportional almost everywhere, including the case where one is zero.
+\end{theorem}
+
+\begin{proof}
+For any $t\in\RR$,
+\[
+0\le \int_a^b(f-tg)^2dx
+=\int_a^b f^2dx-2t\int_a^b fg\,dx+t^2\int_a^b g^2dx.
+\]
+If $\int_a^b g^2dx>0$, this quadratic in $t$ must have nonpositive discriminant, yielding the inequality. If $g=0$ almost everywhere, the result is immediate.
+\end{proof}
+
+\begin{corollary}[A fixed integral gives an $L^2$ bound]
+Writing $L=b-a$ and taking $g\equiv1$,
+\[
+\int_a^b f(x)^2\,dx\ge\frac1L\left(\int_a^b f(x)\,dx\right)^2.
+\]
+Equality for continuous $f$ occurs precisely when $f$ is constant.
+\end{corollary}
+
+\begin{corollary}[Weighted Cauchy--Schwarz]
+If $w(x)>0$ on $[a,b]$, then
+\[
+\int_a^b\frac{f(x)^2}{w(x)}\,dx\ge
+\frac{\left(\int_a^b f(x)\,dx\right)^2}{\int_a^b w(x)\,dx}.
+\]
+Equality occurs if and only if $f(x)=c\,w(x)$ for a constant $c$.
+\end{corollary}
+
+\begin{example}[Optimizing a weighted integral]
+Suppose $\int_0^1 f(x)\,dx=1$. Find the minimum of
+\[
+\int_0^1\frac{f(x)^2}{1+x^2}\,dx.
+\]
+\end{example}
+
+\begin{solution}
+Use $w(x)=1+x^2$. Then
+\[
+\int_0^1\frac{f(x)^2}{1+x^2}\,dx\ge
+\frac{1}{\int_0^1(1+x^2)\,dx}=\frac34.
+\]
+Equality requires $f(x)=c(1+x^2)$. The integral constraint gives $c=3/4$, so the minimum is $\boxed{3/4}$.
+\end{solution}
+
+\section{Jensen's Inequality and Convexity}
+
+\begin{definition}[Convexity]
+A function $\phi$ on an interval is \emph{convex} if
+\[
+\phi(\lambda u+(1-\lambda)v)\le
+\lambda\phi(u)+(1-\lambda)\phi(v)
+\]
+for all $u,v$ in its domain and $0\le\lambda\le1$. For twice differentiable $\phi$, the condition $\phi''\ge0$ implies convexity. A \emph{concave} function satisfies the reverse inequality.
+\end{definition}
+
+\begin{theorem}[Jensen's integral inequality]
+Let $L=b-a$ and suppose $\phi$ is convex on an interval containing the range of $f$. Then
+\[
+\phi\left(\frac1L\int_a^b f(x)\,dx\right)
+\le\frac1L\int_a^b\phi(f(x))\,dx.
+\]
+Reverse the inequality if $\phi$ is concave. If $\phi$ is strictly convex or strictly concave, equality for continuous $f$ requires $f$ to be constant.
+\end{theorem}
+
+\begin{remark}[Why Jensen works]
+Let $m=L^{-1}\int_a^b f(x)\,dx$. For a differentiable convex $\phi$, its tangent line at $m$ lies below its graph:
+\[
+\phi(t)\ge\phi(m)+\phi'(m)(t-m).
+\]
+Set $t=f(x)$ and integrate. The average of $f(x)-m$ is zero.
+\end{remark}
+
+\begin{example}[A concave logarithm]
+If $f\ge0$ and $\int_0^1 f(x)\,dx=1$, prove
+\[
+\int_0^1\log(1+f(x))\,dx\le\log2.
+\]
+\end{example}
+
+\begin{solution}
+The function $\phi(t)=\log(1+t)$ is strictly concave for $t\ge0$ because
+$\phi''(t)=-(1+t)^{-2}<0$. Jensen gives
+\[
+\int_0^1\log(1+f(x))\,dx
+\le\log\left(1+\int_0^1 f(x)\,dx\right)=\log2.
+\]
+Equality holds exactly for $f\equiv1$.
+\end{solution}
+
+\begin{corollary}[A useful power inequality]
+For $p>1$, convexity of $|t|^p$ implies
+\[
+\int_a^b |f(x)|^p\,dx\ge
+L^{1-p}\left|\int_a^b f(x)\,dx\right|^p.
+\]
+This also follows from H\"older's inequality.
+\end{corollary}
+
+\section{Chebyshev's Integral Inequality}
+
+\begin{theorem}[Chebyshev's integral inequality]
+If $f,g$ are both nondecreasing or both nonincreasing on $[a,b]$, then
+\[
+L\int_a^b f(x)g(x)\,dx\ge
+\left(\int_a^b f(x)\,dx\right)
+\left(\int_a^b g(x)\,dx\right),\qquad L=b-a.
+\]
+If one function is nondecreasing and the other is nonincreasing, the inequality reverses.
+\end{theorem}
+
+\begin{proof}
+When $f$ and $g$ are similarly ordered,
+$[f(x)-f(y)][g(x)-g(y)]\ge0$. Integrate over $[a,b]^2$ and expand:
+\[
+0\le\int_a^b\!\int_a^b
+[f(x)-f(y)][g(x)-g(y)]\,dx\,dy
+=2L\int_a^b fg-2\left(\int_a^b f\right)\left(\int_a^b g\right).
+\]
+Rearranging proves the claim. The opposite-monotonicity case follows by reversing the pointwise inequality.
+\end{proof}
+
+\begin{example}[Monotonicity creates a lower bound]
+If $f$ is nondecreasing on $[0,1]$, prove
+\[
+\int_0^1 xf(x)\,dx\ge\frac12\int_0^1 f(x)\,dx.
+\]
+\end{example}
+
+\begin{solution}
+Apply Chebyshev to $g(x)=x$. Then
+\[
+\int_0^1 xf(x)\,dx\ge
+\left(\int_0^1x\,dx\right)\left(\int_0^1 f(x)\,dx\right)
+=\frac12\int_0^1 f(x)\,dx.
+\]
+Because $x$ is strictly increasing, equality for continuous nondecreasing $f$ requires $f$ to be constant.
+\end{solution}
+
+\section{How to Choose a Technique}
+
+\begin{mathbox}
+\begin{itemize}
+\item \textbf{An average and a square:} try Cauchy--Schwarz with $g\equiv1$.
+\item \textbf{An expression $f^2/w$:} try weighted Cauchy--Schwarz.
+\item \textbf{A convex or concave function of $f$:} try Jensen.
+\item \textbf{Two monotone factors:} try Chebyshev.
+\item \textbf{A quadratic expression in $f$:} try completing the square.
+\end{itemize}
+\textbf{Always check the equality case.} It tells you both whether the estimate is sharp and what the extremizing function should be.
+\end{mathbox}
+
+\section{Practice Problems}
+
+\emph{The problems are ordered approximately by difficulty. Unless specified otherwise, functions are continuous on $[0,1]$. Determine equality cases whenever an inequality is given.}
+
+\subsection{Foundations}
+
+\begin{problem}[Fixed average]
+Suppose $\int_0^1 f(x)\,dx=2$. Prove
+\[
+\int_0^1 f(x)^2\,dx\ge4.
+\]
+\end{problem}
+
+\begin{problem}[A weighted minimum]
+Suppose $\int_0^1 f(x)\,dx=1$. Prove
+\[
+\int_0^1\frac{f(x)^2}{1+x}\,dx\ge\frac23.
+\]
+\end{problem}
+
+\begin{problem}[Power integrals]
+Let $a,b,t>0$. Compare
+\[
+P=\left(\int_0^t x^{a+b}\,dx\right)^2,
+\qquad
+Q=\left(\int_0^t x^{2a}\,dx\right)
+\left(\int_0^t x^{2b}\,dx\right).
+\]
+Which is greater, and when are they equal? \emph{(Adapted from Cambridge NRICH.)}
+\end{problem}
+
+\subsection{Choosing the Inequality}
+
+\begin{problem}[Jensen in disguise]
+Assume $f(x)\ge0$ and $\int_0^1 f(x)\,dx=1$. Show
+\[
+\int_0^1\frac{1}{1+f(x)}\,dx\ge\frac12.
+\]
+\end{problem}
+
+\begin{problem}[A reciprocal product]
+Suppose $f(x)>0$ on $[0,1]$. Prove
+\[
+\left(\int_0^1 xf(x)\,dx\right)
+\left(\int_0^1\frac{x}{f(x)}\,dx\right)\ge\frac14.
+\]
+\end{problem}
+
+\begin{problem}[A monotonicity constraint]
+If $f$ is nondecreasing, prove
+\[
+\int_0^1 x^2f(x)\,dx\ge\frac13\int_0^1 f(x)\,dx.
+\]
+\end{problem}
+
+\begin{problem}[Reflection]
+For a real-valued continuous function $f$, show
+\[
+\int_0^1 f(x)f(1-x)\,dx\le\int_0^1 f(x)^2\,dx.
+\]
+\end{problem}
+
+\subsection{Challenges}
+
+\begin{problem}[Two moment constraints]
+Suppose $f$ is continuous and
+\[
+\int_0^1 f(x)\,dx=1,\qquad
+\int_0^1 xf(x)\,dx=1.
+\]
+Prove $\int_0^1 f(x)^2\,dx\ge4$.
+\emph{(From \emph{Putnam and Beyond}, Problem 475.)}
+\end{problem}
+
+\begin{problem}[From derivatives to functions]
+Suppose $u$ is continuously differentiable and $u(0)=0$. Prove
+\[
+\int_0^1 u(x)^2\,dx\le\frac12\int_0^1u'(x)^2\,dx.
+\]
+\emph{Hint: Write $u(x)$ as an integral of its derivative.}
+\end{problem}
+
+\begin{problem}[An olympiad functional equation]
+Determine all continuous $f:[0,1]\to\RR$ satisfying
+\[
+\int_0^1 f(x)\,dx=\frac13+\int_0^1 f(x^2)^2\,dx.
+\]
+\emph{(1982 Romanian Mathematical Olympiad, as presented in \emph{Putnam and Beyond}.)}
+\end{problem}
+
+\subsection*{Sources for Selected Problems}
+\small
+Cambridge NRICH, \emph{Integral Inequality} (Problem 3),
+\href{https://nrich.maths.org/problems/integral-inequality}{NRICH online problem}.
+R. Gelca and T. Andreescu, \emph{Putnam and Beyond} (Springer, 2007), integral inequalities section (Problems 8 and 10). Other problems are standard or independently formulated.
+\normalsize
+\end{document}
