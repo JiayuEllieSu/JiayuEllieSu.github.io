@@ -11,7 +11,7 @@ author_profile: true
 **Presented:** June 2026  
 **Presenter:** Ellie Su  
 **Setting:** Math Circle  
-**Audience:** Approximately 1 attendee  
+**Audience:** Approximately 10 attendees  
 **Materials:** Seven-page lecture handout
 
 In June 2026, I gave a Math Circle lecture on **integral inequalities**, focusing on techniques for proving sharp bounds and identifying equality cases. We began with nonnegativity and completing the square, then developed the integral Cauchy–Schwarz inequality and its weighted form.
