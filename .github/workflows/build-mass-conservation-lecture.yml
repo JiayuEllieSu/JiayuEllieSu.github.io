@@ -37,5 +37,7 @@ jobs:
           git add assets/papers/mass-conservation-differential-formulation.pdf
           if ! git diff --cached --quiet; then
             git commit -m "Publish mass conservation lecture PDF"
-            git push
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
           fi
