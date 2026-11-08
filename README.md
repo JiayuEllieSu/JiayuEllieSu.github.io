@@ -10,3 +10,5 @@ To preview locally:
 bundle install
 bundle exec jekyll serve
 ```
+## Citations:
+GPT-6 was used in the editing of my website. 
