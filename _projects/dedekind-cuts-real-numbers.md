@@ -1,16 +1,21 @@
 ---
 layout: single
 title: "Construction of the Real Numbers from the Rational Numbers"
-date: 2026-10-29
-category: note
-description: "An expository mathematics paper constructing the real numbers using Dedekind cuts."
+date: 2026-07-01
+description: "A construction of the real numbers using Dedekind cuts, including arithmetic, order, and completeness."
+category: project
+kind: "Expository paper"
+materials: "14-page mathematical exposition (PDF)"
+primary_label: "Read paper (PDF)"
+primary_url: "/assets/papers/construction-of-the-real-numbers.pdf"
+display_date: "Summer 2026"
+contributors_label: "Author"
+contributors: "Ellie Su"
 classes: wide
 author_profile: true
 ---
 
-**Author:** Ellie Su  
-**Program:** Summer math program  
-**Type:** Mathematical exposition
+{% include work-meta.html %}
 
 This paper develops a construction of the real numbers starting from the rational numbers. It uses **Dedekind cuts** to describe both rational and irrational numbers as subsets of the rationals, then defines arithmetic and order on these cuts.
 

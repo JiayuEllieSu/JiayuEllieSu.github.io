@@ -1,12 +1,20 @@
 ---
 layout: single
 title: "Circular Stop Optimization"
-description: "A mathematical and computational study of fixed-budget bus-stop placement on circular routes, combining continuum models, discrete optimization, and observational timing calibration."
-category: project
+description: "Modeling the placement of a fixed number of stops along circular bus routes, with discrete optimization and travel-time calibration."
 date: 2026-11-01
+category: project
+kind: "Mathematical and computational project"
+materials: "Paper (PDF), source code, figures, and reproducibility scripts"
+primary_label: "Read paper (PDF)"
+primary_url: "https://github.com/JiayuEllieSu/circular-stop-optimization/blob/main/paper/Fixed_Budget_Stop_Design_on_Circular_Routes_Theory__Discrete_Benchmarks__and_Observational_Calibration.pdf"
+secondary_label: "View code"
+secondary_url: "https://github.com/JiayuEllieSu/circular-stop-optimization"
 classes: wide
 author_profile: true
 ---
+
+{% include work-meta.html %}
 
 **Circular Stop Optimization** is a project I developed to investigate how to place a fixed number of bus stops along a circular route. Stop placement creates a tradeoff: closely spaced stops reduce passenger walking distances, but additional stops also impose delays on riders already aboard. I was interested in how a mathematical model of optimal stop density could be converted into a practical set of individual stop locations.
 

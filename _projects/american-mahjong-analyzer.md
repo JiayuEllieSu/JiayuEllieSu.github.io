@@ -1,12 +1,18 @@
 ---
 layout: single
 title: "American Mahjong Analyzer"
-description: "A C++ project exploring American Mahjong hand analysis, tile counting, and eventually probability-based discard recommendations."
-category: project
+description: "An in-progress C++ analyzer for American Mahjong hands, card patterns, and rule-aware strategy."
 date: 2026-10-29
+category: project
+kind: "Software project"
+materials: "C++ source code and planned card-matching, tile-counting, and strategy algorithms"
+primary_label: "View source code"
+primary_url: "https://github.com/JiayuEllieSu/mahjong-analyzer"
 classes: wide
 author_profile: true
 ---
+
+{% include work-meta.html %}
 
 **American Mahjong Analyzer** is a C++ project I'm building to explore game strategy through algorithms, combinatorics, and probability. The long-term goal is to evaluate a player's hand against winning combinations on an American Mahjong card and recommend moves based on the chances of completing a hand.
 

@@ -1,12 +1,20 @@
 ---
 layout: single
 title: "mbandwt: M-Band Transform Experiments"
-description: "A Python project exploring M-band FIR filter banks, multilevel transforms, and signal reconstruction."
-category: project
+description: "A Python library for experimenting with M-band filter banks, multilevel signal transforms, and reconstruction."
 date: 2026-10-13
+category: project
+kind: "Software project"
+materials: "Python code, examples, numerical experiments, and a companion exposition"
+primary_label: "View source code"
+primary_url: "https://github.com/JiayuEllieSu/mbandwt"
+secondary_label: "Read exposition (PDF)"
+secondary_url: "https://github.com/JiayuEllieSu/mbandwt/blob/main/docs/paper/mband_wavelets.pdf"
 classes: wide
 author_profile: true
 ---
+
+{% include work-meta.html %}
 
 **mbandwt** is a Python project I started while learning about wavelets and multirate signal processing. A typical discrete wavelet transform separates a signal into two channels at each level. I wanted to see how the same ideas work with \(M\) channels, and what it takes to reconstruct the original signal from the resulting coefficients.
 

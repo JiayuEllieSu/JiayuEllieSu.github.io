@@ -2,17 +2,20 @@
 layout: single
 title: "Integral Inequalities"
 date: 2026-06-01
-category: note
-description: "A Math Circle lecture I gave in June 2026 on integral inequalities, with worked examples and olympiad-style problems."
+description: "Integral Cauchy–Schwarz, Jensen's and Chebyshev's inequalities, with equality cases and olympiad-style problems."
+category: lecture
+kind: "Lecture"
+materials: "7-page handout with worked examples and 10 practice problems (PDF)"
+primary_label: "View handout (PDF)"
+primary_url: "/assets/papers/integral-inequalities-lecture-notes.pdf"
+setting: "Math Circle"
+contributors_label: "Presenter"
+contributors: "Ellie Su"
 classes: wide
 author_profile: true
 ---
 
-**Presented:** June 2026  
-**Presenter:** Ellie Su  
-**Setting:** Math Circle  
-**Audience:** Approximately 10 attendees  
-**Materials:** Seven-page lecture handout
+{% include work-meta.html %}
 
 In June 2026, I gave a Math Circle lecture on **integral inequalities**, focusing on techniques for proving sharp bounds and identifying equality cases. We began with nonnegativity and completing the square, then developed the integral Cauchy–Schwarz inequality and its weighted form.
 

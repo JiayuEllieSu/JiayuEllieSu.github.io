@@ -2,18 +2,20 @@
 layout: single
 title: "Math in Music Theory"
 date: 2026-01-14
-category: note
-description: "A Math Club lecture I gave in January 2026, exploring mathematical structures underlying music."
+description: "Pitch and tuning, modular arithmetic, the circle of fifths, harmonics, and Fourier analysis in music."
+category: lecture
+kind: "Lecture"
+materials: "17-slide presentation (PDF)"
+primary_label: "View slides (PDF)"
+primary_url: "/assets/mathinmusic%20%281%29.pdf"
+setting: "Math Club"
+contributors_label: "Presenter"
+contributors: "Ellie Su"
 classes: wide
 author_profile: true
 ---
 
-**Presented:** January 2026  
-**Presenter:** Ellie Su  
-**Setting:** School Math Club  
-**Audience:** Approximately 15 people  
-**Duration:** Approximately 20 minutes  
-**Materials:** 17 lecture slides
+{% include work-meta.html %}
 
 I gave a Math Club lecture on the mathematical ideas underlying music theory, drawing on my interests in both mathematics and music. The talk explored how the frequencies of sound waves translate into musical pitch, why octaves and semitones are naturally described using logarithms, and how pitch classes, transposition, and inversion can be modeled using arithmetic modulo 12.
 

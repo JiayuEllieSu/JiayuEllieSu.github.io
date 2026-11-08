@@ -2,17 +2,20 @@
 layout: single
 title: "Fluids & Hydrostatics"
 date: 2025-10-01
-category: note
-description: "A Physics Club lecture I gave in October 2025, introducing fundamental concepts in fluid mechanics."
+description: "Hydrostatic pressure, buoyancy, continuity and Bernoulli's equation, with conceptual and challenge problems."
+category: lecture
+kind: "Lecture"
+materials: "5-page lecture handout (PDF)"
+primary_label: "View handout (PDF)"
+primary_url: "/assets/Fluids__hydrostatis.pdf"
+setting: "Physics Club"
+contributors_label: "Presenter"
+contributors: "Ellie Su"
 classes: wide
 author_profile: true
 ---
 
-**Presented:** October 2025  
-**Presenter:** Ellie Su  
-**Setting:** School Physics Club  
-**Audience:** Approximately 20 students  
-**Materials:** Five-page lecture handout
+{% include work-meta.html %}
 
 I gave a mini-lecture on fluids and hydrostatics at my school's Physics Club, introducing fundamental concepts in fluid mechanics and working through conceptual questions and problems with an audience of around 20 students.
 

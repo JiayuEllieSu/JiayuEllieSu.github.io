@@ -2,17 +2,20 @@
 layout: single
 title: "Mass Conservation and Differential Formulation"
 date: 2026-11-01
-category: note
-description: "A November 2026 Fluid Mechanics class lecture on material derivatives and differential mass conservation, with physics olympiad applications."
+description: "The material derivative, the continuity equation, and incompressibility, derived from conservation laws with worked examples."
+category: lecture
+kind: "Lecture"
+materials: "6-page lecture handout (PDF)"
+primary_label: "View handout (PDF)"
+primary_url: "/assets/papers/mass-conservation-differential-formulation.pdf"
+setting: "Fluid Mechanics class"
+contributors_label: "Presenter"
+contributors: "Ellie Su"
 classes: wide
 author_profile: true
 ---
 
-**Presented:** November 2026  
-**Presenter:** Ellie Su  
-**Setting:** Fluid Mechanics class  
-**Audience:** 15+ students  
-**Materials:** Six-page lecture handout
+{% include work-meta.html %}
 
 In November 2026, I gave a lecture in my Fluid Mechanics class on **mass conservation and its differential formulation**. I began by connecting integral conservation laws for a finite control volume to pointwise differential equations, then introduced the Eulerian and Lagrangian descriptions of fluid motion and derived the **material derivative**, distinguishing local from convective acceleration.
 
