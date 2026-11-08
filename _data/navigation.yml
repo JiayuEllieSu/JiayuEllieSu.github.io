@@ -3,11 +3,9 @@ main:
     url: /
   - title: Research
     url: /research.html
-  - title: Projects & Lectures
+  - title: Projects
     url: /projects/
   - title: Writing
     url: /writing/
   - title: Music
     url: /music/
-  - title: Blog
-    url: /blog.html

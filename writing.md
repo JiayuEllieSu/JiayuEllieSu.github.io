@@ -7,7 +7,7 @@ classes: wide
 author_profile: true
 ---
 
-This page is still a work in progress and currently includes only a small selection of my writing. I'll be adding more poems, essays, and other pieces over time.
+<p class="site-note">This page is still a work in progress and currently includes only a small selection of my writing. I'll be adding more poems, essays, and other pieces over time.</p>
 
 {% assign writing_items = site.writing | sort: "date" | reverse %}
 {% assign poetry = writing_items | where: "category", "poetry" %}
@@ -21,7 +21,7 @@ This page is still a work in progress and currently includes only a small select
 ## Book Manuscript
 
 {% for entry in books %}
-<article class="creative-entry">
+<article class="creative-entry creative-entry--book">
   <h3><a href="{{ entry.url | relative_url }}">{{ entry.title | escape }}</a></h3>
   <p class="creative-entry__meta">{{ entry.subtitle | escape }} · Revised manuscript, November 2026</p>
   <p>{{ entry.description | escape }}</p>
@@ -36,7 +36,6 @@ This page is still a work in progress and currently includes only a small select
 <div class="creative-entry">
   <h3><a href="{{ entry.url | relative_url }}">{{ entry.title | escape }}</a></h3>
   {% if entry.display_date %}<p class="creative-entry__meta">{{ entry.display_date | escape }}</p>{% elsif entry.date %}<p class="creative-entry__meta">{{ entry.date | date: "%B %Y" }}</p>{% endif %}
-  {% if entry.description %}<p>{{ entry.description | escape }}</p>{% endif %}
 </div>
 {% endfor %}
 {% else %}

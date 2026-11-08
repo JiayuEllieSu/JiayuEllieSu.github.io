@@ -8,81 +8,187 @@ search: false
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
-/* Deep Plum site palette. Kept after theme imports to override theme styling. */
+/* Restrained typography and text-led pages, with no external fonts. */
 :root {
   --plum-bg: #1b1624;
-  --plum-panel: #31243a;
-  --plum-text: #f5eff7;
-  --plum-muted: #d9cedd;
-  --plum-accent: #cbb0e0;
-  --plum-border: #55445d;
+  --plum-panel: #282130;
+  --plum-text: #f0eaf1;
+  --plum-muted: #c8bbcc;
+  --plum-accent: #d5b9dc;
+  --plum-border: #514458;
 }
 html, body, .initial-content, #main, .page, .archive {
   background-color: var(--plum-bg);
   color: var(--plum-text);
 }
-.masthead, .greedy-nav, .greedy-nav .hidden-links {
-  background-color: var(--plum-panel);
+body { font-kerning: normal; }
+.masthead, .greedy-nav, .greedy-nav .hidden-links { background-color: var(--plum-bg); }
+.masthead { border-bottom: 1px solid var(--plum-border); }
+.greedy-nav .visible-links a, .greedy-nav .hidden-links a,
+.sidebar, .page__footer, .creative-entry__meta, .site-note,
+.work-entry__links, .work-detail__meta {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
-.page__footer {
-  background-color: #241b2d;
+.greedy-nav .visible-links a { font-size: .89em; letter-spacing: .005em; }
+.site-title, .page__title, .page__content h2, .page__content h3,
+.author__name {
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  font-weight: 400;
+}
+.site-title { letter-spacing: -.015em; }
+.page__title {
+  font-size: 2.05em;
+  line-height: 1.2;
+  letter-spacing: -.02em;
+  border-bottom: 0;
+  margin-bottom: .75em;
+}
+.page__content {
+  max-width: 47rem;
+  color: var(--plum-text);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.73;
+}
+.page__content h2 {
+  margin-top: 2.1rem;
+  padding-bottom: .35rem;
+  border-bottom: 1px solid var(--plum-border);
+  font-size: 1.47em;
+  letter-spacing: -.01em;
+}
+.page__content h3 { font-size: 1.15em; line-height: 1.38; }
+.page__content p, .page__content li { line-height: 1.73; }
+.page__content li { margin-bottom: .18em; }
+.page__content code, .page__content pre {
+  font-family: SFMono-Regular, Consolas, "Liberation Mono", monospace;
+}
+.page__content pre { overflow-x: auto; }
+.page__content blockquote {
+  background: transparent;
+  border-left: 2px solid var(--plum-border);
   color: var(--plum-muted);
 }
-.sidebar, .page__content, .page__inner-wrap {
+.page__content table { background-color: transparent; }
+.page__footer {
+  background-color: var(--plum-bg);
+  color: var(--plum-muted);
+  border-top: 1px solid var(--plum-border);
+}
+.page__footer a { color: var(--plum-muted); }
+.sidebar, .page__inner-wrap { color: var(--plum-text); }
+.sidebar .author__bio { color: var(--plum-muted); font-size: .92em; }
+.sidebar .author__name a { color: var(--plum-text); }
+.author__urls-wrapper .btn {
+  background: transparent;
+  border: 1px solid var(--plum-border);
   color: var(--plum-text);
 }
-a, .page__content a, .author__urls a {
-  color: var(--plum-accent);
+a, .page__content a, .author__urls a { color: var(--plum-accent); }
+.page__content a {
+  text-underline-offset: .15em;
+  text-decoration-thickness: .055em;
 }
-a:hover, a:focus {
-  color: #e5d2f2;
+a:hover, a:focus, .page__content a:hover, .page__content a:focus {
+  color: #eee0f1;
 }
-.masthead a, .greedy-nav a, .page__footer a {
-  color: var(--plum-text);
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--plum-accent);
+  outline-offset: 3px;
 }
-.masthead a:hover, .greedy-nav a:hover, .page__footer a:hover {
-  color: var(--plum-accent);
-}
-hr, .masthead, .page__footer, .page__title {
-  border-color: var(--plum-border);
-}
-input, textarea, select, pre, code, blockquote, table {
+.masthead a, .greedy-nav a { color: var(--plum-text); }
+.masthead a:hover, .greedy-nav a:hover { color: var(--plum-accent); }
+hr, .page__title, input, textarea, select, pre, code, table {
   border-color: var(--plum-border);
 }
 input, textarea, select, pre {
   background-color: var(--plum-panel);
   color: var(--plum-text);
 }
-
-/* Writing, music, and blog entries */
+/* Archives read as a list of work, not a collection of cards. */
 .creative-entry {
-  margin: 1.25rem 0;
-  padding: 1rem 1.2rem;
-  background: #31243a;
-  border: 1px solid #55445d;
-  border-radius: 8px;
+  margin: 0;
+  padding: 1.1rem 0 1.2rem;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--plum-border);
+  border-radius: 0;
+  box-shadow: none;
 }
 .creative-entry h3 {
-  margin: 0 0 .35rem;
-  font-size: 1.15em;
+  margin: 0 0 .38rem;
+  font-size: 1.19em;
+  line-height: 1.38;
 }
-.creative-entry p {
-  margin: .45rem 0;
+.creative-entry h3 a {
+  color: var(--plum-text);
+  text-decoration: none;
 }
+.creative-entry h3 a:hover, .creative-entry h3 a:focus {
+  color: var(--plum-accent);
+  text-decoration: underline;
+  text-underline-offset: .13em;
+}
+.creative-entry p { margin: .4rem 0; }
 .creative-entry__meta, .creative-empty {
-  color: #d9cedd;
-  font-size: .9em;
+  color: var(--plum-muted);
+  font-size: .81em;
+  line-height: 1.5;
 }
-.creative-empty {
-  padding: .65rem 0 1.25rem;
+.creative-empty { padding: .6rem 0 1.1rem; }
+.site-note {
+  color: var(--plum-muted);
+  font-size: .88em;
+  line-height: 1.6;
 }
-
-/* Project and lecture entries */
-.work-entry { margin: 0.85rem 0; padding: 1rem 1.2rem; }
-.work-entry h3 { line-height: 1.35; }
-.work-entry__includes { font-size: 0.93em; }
-.work-entry__links { display: flex; flex-wrap: wrap; gap: 0.65rem; align-items: baseline; font-size: 0.9em; }
-.work-entry__links a { text-decoration: underline; text-underline-offset: 0.16em; }
-.work-detail__meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 0.7rem 1.25rem; margin: 0 0 1.5rem; padding: 0.85rem 0; border-top: 1px solid var(--plum-border); border-bottom: 1px solid var(--plum-border); }
-.work-detail__field dt { font-size: 0.75em; font-weight: 600; color: var(--plum-muted); margin-bottom: 0.2rem; }
-.work-detail__field dd { margin: 0; font-size: 0.91em; line-height: 1.5; overflow-wrap: anywhere; }
+.creative-entry--book h3 { font-size: 1.32em; font-style: italic; }
+.work-entry__includes { font-size: .94em; }
+.work-entry__links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .55rem;
+  font-size: .83em;
+}
+.work-entry__links a {
+  text-decoration: underline;
+  text-underline-offset: .13em;
+}
+/* Individual project and lecture metadata as a bibliography. */
+.work-detail__meta {
+  max-width: 43rem;
+  display: block;
+  padding: .75rem 0;
+  margin: 0 0 1.5rem;
+  border-top: 1px solid var(--plum-border);
+  border-bottom: 1px solid var(--plum-border);
+}
+.work-detail__field {
+  display: flex;
+  gap: .65rem;
+  margin: .25rem 0;
+  align-items: baseline;
+}
+.work-detail__field dt {
+  flex: 0 0 6rem;
+  color: var(--plum-muted);
+  font-size: .82em;
+  font-weight: 500;
+}
+.work-detail__field dd {
+  flex: 1;
+  margin: 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-size: .85em;
+  line-height: 1.5;
+}
+.page__content .poem { max-width: 38rem; line-height: 1.8; }
+.page__content audio { max-width: 100%; }
+@media (max-width: 600px) {
+  .page__title { font-size: 1.85em; }
+  .page__content { line-height: 1.65; }
+  .page__content h2 { margin-top: 1.7rem; }
+  .creative-entry { padding: .95rem 0 1rem; }
+  .work-detail__field { display: block; }
+  .work-detail__field dt { margin-bottom: .1rem; }
+}

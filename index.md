@@ -1,15 +1,19 @@
 ---
 layout: single
-title: Home
+title: Jiayu Ellie Su
 description: About Jiayu Ellie Su.
 classes: wide
-author_profile: true
+author_profile: false
 ---
 
-Hi, I'm Ellie! I'm currently a student at Phillips Academy Andover, where I spend much of my time exploring mathematics, physics, and computer science.
+Hi, I'm Ellie. I'm a student at Phillips Academy Andover, where I spend much of my time on mathematics, physics, and computer science. I like working through things I don't understand and seeing how ideas from one subject turn up in another.
 
-I'm particularly drawn to the connections between these fields, especially how abstract mathematical ideas can help explain physical phenomena or inspire new computational approaches. I enjoy the process of working through something I don't understand, following questions wherever they lead, and gradually finding structure in what initially seems confusing.
+I also write poetry and essays, compose music, and enjoy teaching. Preparing to explain something to another person often makes me think about it more carefully myself.
 
-Outside of STEM, I enjoy composing music, writing poetry, exploring philosophical questions, and putting my thoughts into words. I also enjoy teaching and sharing ideas with others.
+This website is a place to keep some of that work in one place. Some of it is finished; much of it is still changing.
 
-I hope to use this website to share my research, projects, writing, and whatever else I find worth exploring.
+## A few pages
+
+- [HistoRange]({{ '/research/historange/' | relative_url }}), a computational biology research project about tissue structure and cell-cell signaling.
+- [From Fourier Analysis to M-Band Wavelets]({{ '/projects/mband-wavelets-exposition/' | relative_url }}), a mathematical exposition that grew out of my interest in signal processing.
+- [Blue to Blue]({{ '/writing/blue-to-blue/' | relative_url }}), a manuscript of philosophical essays and poems on death, identity, and what it means to continue.
