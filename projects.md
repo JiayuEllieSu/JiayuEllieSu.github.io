@@ -23,7 +23,7 @@ Software, mathematical and computational investigations, and expository papers.
   <p class="creative-entry__meta">{{ entry.kind | escape }} · {% if entry.display_date %}{{ entry.display_date | escape }}{% else %}{{ entry.date | date: "%B %Y" }}{% endif %}</p>
   {% if entry.description %}<p>{{ entry.description | escape }}</p>{% endif %}
   {% if entry.materials %}<p class="work-entry__includes"><strong>Included:</strong> {{ entry.materials | escape }}</p>{% endif %}
-  {% if entry.primary_url %}<p class="work-entry__links"><a href="{{ entry.primary_url | relative_url }}">{{ entry.primary_label | escape }}</a>{% if entry.secondary_url %} <span aria-hidden="true">·</span> <a href="{{ entry.secondary_url | relative_url }}">{{ entry.secondary_label | escape }}</a>{% endif %}</p>{% endif %}
+  {% if entry.primary_url %}<p class="work-entry__links"><a href="{% if entry.primary_url contains "://" %}{{ entry.primary_url | escape }}{% else %}{{ entry.primary_url | relative_url }}{% endif %}">{{ entry.primary_label | escape }}</a>{% if entry.secondary_url %} <span aria-hidden="true">·</span> <a href="{% if entry.secondary_url contains "://" %}{{ entry.secondary_url | escape }}{% else %}{{ entry.secondary_url | relative_url }}{% endif %}">{{ entry.secondary_label | escape }}</a>{% endif %}</p>{% endif %}
 </article>
 {% endfor %}
 
@@ -37,6 +37,6 @@ Talks I've given for classes, clubs, and math circles, along with their notes or
   <p class="creative-entry__meta">Lecture · {% if entry.display_date %}{{ entry.display_date | escape }}{% else %}{{ entry.date | date: "%B %Y" }}{% endif %}{% if entry.setting %} · {{ entry.setting | escape }}{% endif %}</p>
   {% if entry.description %}<p>{{ entry.description | escape }}</p>{% endif %}
   {% if entry.materials %}<p class="work-entry__includes"><strong>Included:</strong> {{ entry.materials | escape }}</p>{% endif %}
-  {% if entry.primary_url %}<p class="work-entry__links"><a href="{{ entry.primary_url | relative_url }}">{{ entry.primary_label | escape }}</a></p>{% endif %}
+  {% if entry.primary_url %}<p class="work-entry__links"><a href="{% if entry.primary_url contains "://" %}{{ entry.primary_url | escape }}{% else %}{{ entry.primary_url | relative_url }}{% endif %}">{{ entry.primary_label | escape }}</a></p>{% endif %}
 </article>
 {% endfor %}
