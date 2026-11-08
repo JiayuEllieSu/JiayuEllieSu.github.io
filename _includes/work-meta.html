@@ -1,0 +1,7 @@
+<dl class="work-detail__meta" aria-label="Work details">
+  {% if page.kind %}<div class="work-detail__field"><dt>Type</dt><dd>{{ page.kind | escape }}</dd></div>{% endif %}
+  {% if page.date %}<div class="work-detail__field"><dt>Date</dt><dd>{% if page.display_date %}{{ page.display_date | escape }}{% else %}{{ page.date | date: "%B %Y" }}{% endif %}</dd></div>{% endif %}
+  {% if page.setting %}<div class="work-detail__field"><dt>Setting</dt><dd>{{ page.setting | escape }}</dd></div>{% endif %}
+  {% if page.contributors %}<div class="work-detail__field"><dt>{{ page.contributors_label | default: "Contributors" | escape }}</dt><dd>{{ page.contributors | escape }}</dd></div>{% endif %}
+  {% if page.materials %}<div class="work-detail__field"><dt>Included</dt><dd>{{ page.materials | escape }}</dd></div>{% endif %}
+</dl>

@@ -1,19 +1,15 @@
-# Notes for updating the website
+# Updating the website
 
-Add or edit Markdown files in:
+Add pages to `_research/` (research), `_projects/` (projects, expository papers, and lectures), `_writing/` (writing), and `_music/` (music).
 
-- `_research/` for research
-- `_projects/` for projects, lectures, and notes
-- `_writing/` for essays and poems
-- `_music/` for music
-- `_posts/` for blog posts
+## Projects and lectures
 
-Put PDFs and other files in `assets/`. Use `_templates/` if needed.
+The `/projects/` page has two sections. Use `category: project` for software, computational investigations, and expository papers, or `category: lecture` for talks. Specify `kind:` to distinguish software projects from expository papers. For lectures, also set `setting:` where relevant.
 
-Unfinished blog posts can go in `_drafts/`, and unfinished projects in `_draft_projects/`. These aren't published on the website, but the repository itself is public.
+Keep each entry consistent: one-sentence `description:`, `materials:` stating what is included, `primary_label:` and `primary_url:` linking to the PDF, handout, or code. Optional secondary links use `secondary_label:` and `secondary_url:`. Use `display_date:` when a season is more accurate than a month.
 
-Commit changes to `main` to update the website. Check [GitHub Actions](https://github.com/JiayuEllieSu/JiayuEllieSu.github.io/actions) if something doesn't appear.
+The shared `_includes/work-meta.html` renders date, type, contributors, setting, and materials on detail pages. Start from `_templates/project.md`, `_templates/note.md`, or `_templates/lecture.md`.
 
-For local preview: `bundle install` and `bundle exec jekyll serve`.
+Put PDFs in `assets/`, and verify their paths. Commit changes to `main`; consult [GitHub Actions](https://github.com/JiayuEllieSu/JiayuEllieSu.github.io/actions) for deploy status. Locally, run `bundle install` and `bundle exec jekyll serve`.
 
-Fourier lecture notes are in `assets/latex/fourier-series/`; the workflow rebuilds the linked PDF when they change.
+Unfinished pages may be kept in `_drafts/` or `_draft_projects/`. They are not published as pages, but the repository is public.

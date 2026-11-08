@@ -1,9 +1,9 @@
 ---
 layout: single
 title: "HistoRange: Histology-Guided Modeling of Anisotropic Diffusion and Effective Signaling Range in Spatial Transcriptomics"
-description: "A computational framework using histology-derived anisotropic transport to study spatial ligand-receptor signaling and estimate effective signaling ranges."
+description: "A computational framework using histology-derived anisotropic transport to study spatial ligand-receptor signaling and assess effective signaling-range identifiability."
 date: 2026-10-29
-status: "2026 research project · Manuscript in progress"
+status: "Manuscript submitted to PLOS Computational Biology"
 classes: wide
 author_profile: true
 ---
@@ -19,7 +19,7 @@ The framework separates **interaction detection** from **effective-range estimat
 1. **Histology and geometry:** extract tissue structure and local orientations from H&E images, defining an anisotropic transport tensor while respecting tissue boundaries and holes.
 2. **Transport modeling:** propagate ligand source fields through a screened diffusion equation with no-flux boundary conditions, using finite-element numerical methods.
 3. **Spatial association testing:** evaluate whether predicted exposure is associated with receptor response using covariance-aware generalized least squares and bootstrap-based inference.
-4. **Effective-range estimation:** estimate a characteristic transport length for supported secreted interactions, with simulation-calibrated uncertainty and boundary-aware reporting.
+4. **Effective-range identifiability:** assess whether supported secreted interactions permit a finite transport-length estimate, and report uncertainty or nonidentifiability when the data do not resolve a range.
 5. **Robustness and specificity:** evaluate the contribution of matched histology and the stability of inferred ranges separately from the primary detection results.
 
 One model component takes the form

@@ -7,7 +7,7 @@ classes: wide
 author_profile: true
 ---
 
-A collection of my poems, essays, and thoughts.
+This page is still a work in progress and currently includes only a small selection of my writing. I'll be adding more poems, essays, and other pieces over time.
 
 {% assign writing_items = site.writing | sort: "date" | reverse %}
 {% assign poetry = writing_items | where: "category", "poetry" %}
@@ -28,8 +28,8 @@ A collection of my poems, essays, and thoughts.
 <p class="creative-empty">Poems will appear here.</p>
 {% endif %}
 
-## Essays
 {% if essays.size > 0 %}
+## Essays
 {% for entry in essays %}
 <div class="creative-entry">
   <h3><a href="{{ entry.url | relative_url }}">{{ entry.title | escape }}</a></h3>
@@ -37,12 +37,10 @@ A collection of my poems, essays, and thoughts.
   {% if entry.description %}<p>{{ entry.description | escape }}</p>{% endif %}
 </div>
 {% endfor %}
-{% else %}
-<p class="creative-empty">Essays will appear here.</p>
 {% endif %}
 
-## Creative Prose
 {% if creative_prose.size > 0 %}
+## Creative Prose
 {% for entry in creative_prose %}
 <div class="creative-entry">
   <h3><a href="{{ entry.url | relative_url }}">{{ entry.title | escape }}</a></h3>
@@ -50,8 +48,6 @@ A collection of my poems, essays, and thoughts.
   {% if entry.description %}<p>{{ entry.description | escape }}</p>{% endif %}
 </div>
 {% endfor %}
-{% else %}
-<p class="creative-empty">Creative prose will appear here.</p>
 {% endif %}
 
 ## Philosophical Reflections

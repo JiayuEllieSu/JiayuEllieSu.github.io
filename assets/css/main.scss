@@ -76,3 +76,13 @@ input, textarea, select, pre {
 .creative-empty {
   padding: .65rem 0 1.25rem;
 }
+
+/* Project and lecture entries */
+.work-entry { margin: 0.85rem 0; padding: 1rem 1.2rem; }
+.work-entry h3 { line-height: 1.35; }
+.work-entry__includes { font-size: 0.93em; }
+.work-entry__links { display: flex; flex-wrap: wrap; gap: 0.65rem; align-items: baseline; font-size: 0.9em; }
+.work-entry__links a { text-decoration: underline; text-underline-offset: 0.16em; }
+.work-detail__meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 0.7rem 1.25rem; margin: 0 0 1.5rem; padding: 0.85rem 0; border-top: 1px solid var(--plum-border); border-bottom: 1px solid var(--plum-border); }
+.work-detail__field dt { font-size: 0.75em; font-weight: 600; color: var(--plum-muted); margin-bottom: 0.2rem; }
+.work-detail__field dd { margin: 0; font-size: 0.91em; line-height: 1.5; overflow-wrap: anywhere; }
