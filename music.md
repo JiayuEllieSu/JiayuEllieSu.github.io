@@ -17,6 +17,8 @@ I became increasingly interested in writing music of my own. In ninth grade, I t
 
 ## Compositions
 
+This section is still a work in progress and currently includes only a small selection of my compositions. I'll add more pieces and scores as I prepare them for sharing.
+
 {% assign music_items = site.music | sort: "date" | reverse %}
 {% assign compositions = music_items | where: "category", "composition" %}
 {% assign scores = music_items | where: "category", "sheet-music" %}
