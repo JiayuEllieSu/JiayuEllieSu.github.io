@@ -23,5 +23,3 @@ The book begins with burial and the recognition of death, then turns to memory, 
 The manuscript has five parts, 28 chapters, and 18 poems woven into the prose. The poems do not always agree with the essays. I wanted them to have room to express fears, doubts, and convictions that a philosophical argument might leave unresolved.
 
 This is a revised draft, not a finished book. I expect to keep changing both the prose and the poems.
-
-[Open the complete manuscript (PDF, 84 pages)]({{ page.manuscript_pdf | relative_url }})

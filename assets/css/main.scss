@@ -121,7 +121,10 @@ input, textarea, select, pre {
 }
 .creative-entry h3 a {
   color: var(--plum-text);
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-color: #837188;
+  text-decoration-thickness: .05em;
+  text-underline-offset: .14em;
 }
 .creative-entry h3 a:hover, .creative-entry h3 a:focus {
   color: var(--plum-accent);
@@ -184,6 +187,16 @@ input, textarea, select, pre {
 }
 .page__content .poem { max-width: 38rem; line-height: 1.8; }
 .page__content audio { max-width: 100%; }
+/* Pages without a sidebar keep a centered reading column. */
+@media (min-width: 64em) {
+  #main > .page:first-child {
+    float: none;
+    width: 47rem;
+    max-width: 100%;
+    margin: 0 auto;
+    padding-right: 0;
+  }
+}
 @media (max-width: 600px) {
   .page__title { font-size: 1.85em; }
   .page__content { line-height: 1.65; }
