@@ -15,6 +15,21 @@ This page is still a work in progress and currently includes only a small select
 {% assign reflections = writing_items | where: "category", "reflection" %}
 {% assign creative_prose = writing_items | where: "category", "creative-prose" %}
 
+{% assign books = writing_items | where: "category", "book" %}
+
+{% if books.size > 0 %}
+## Book Manuscript
+
+{% for entry in books %}
+<article class="creative-entry">
+  <h3><a href="{{ entry.url | relative_url }}">{{ entry.title | escape }}</a></h3>
+  <p class="creative-entry__meta">{{ entry.subtitle | escape }} · Revised manuscript, November 2026</p>
+  <p>{{ entry.description | escape }}</p>
+  <p><a href="{{ entry.manuscript_pdf | relative_url }}">Read the manuscript (PDF, 84 pages)</a></p>
+</article>
+{% endfor %}
+{% endif %}
+
 ## Poetry
 {% if poetry.size > 0 %}
 {% for entry in poetry %}
@@ -50,20 +65,3 @@ This page is still a work in progress and currently includes only a small select
 {% endfor %}
 {% endif %}
 
-## Philosophical Reflections
-
-*Blue to Blue: Death, Consciousness, and What Humanity Invents to Live* is a book of philosophy and poetry I'm currently working on. It explores how humans confront mortality, what makes a self, and how science, religion, and philosophy shape our attempts to understand death and find meaning in life. The manuscript pairs philosophical reflections with poems that approach the same questions through imagery and experience.
-
-The pieces below are excerpts from this work in progress.
-
-{% if reflections.size > 0 %}
-{% for entry in reflections %}
-<div class="creative-entry">
-  <h3><a href="{{ entry.url | relative_url }}">{{ entry.title | escape }}</a></h3>
-  {% if entry.date %}<p class="creative-entry__meta">{{ entry.date | date: "%B %Y" }}</p>{% endif %}
-  {% if entry.description %}<p>{{ entry.description | escape }}</p>{% endif %}
-</div>
-{% endfor %}
-{% else %}
-<p class="creative-empty">Reflections will appear here.</p>
-{% endif %}
