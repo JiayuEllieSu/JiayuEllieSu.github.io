@@ -2,7 +2,7 @@
 layout: single
 title: "Circular Stop Optimization"
 description: "Modeling the placement of a fixed number of stops along circular bus routes, with discrete optimization and travel-time calibration."
-date: 2026-11-01
+date: 2026-03-01
 category: project
 kind: "Mathematical and computational project"
 materials: "Paper (PDF), source code, figures, and reproducibility scripts"
