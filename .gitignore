@@ -25,3 +25,7 @@ node_modules/
 *.out
 *.synctex.gz
 *.toc
+
+# Python link checker caches
+__pycache__/
+*.py[cod]

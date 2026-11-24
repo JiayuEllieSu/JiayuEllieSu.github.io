@@ -1,0 +1,4 @@
+# Local preview uses the exact theme version in Gemfile.lock.
+# GitHub Pages continues to use the pinned remote_theme in _config.yml.
+theme: minimal-mistakes-jekyll
+ignore_theme_config: true

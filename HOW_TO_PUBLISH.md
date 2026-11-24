@@ -10,6 +10,6 @@ Keep each entry consistent: one-sentence `description:`, `materials:` stating wh
 
 The shared `_includes/work-meta.html` renders date, type, contributors, setting, and materials on detail pages. Start from `_templates/project.md`, `_templates/note.md`, or `_templates/lecture.md`.
 
-Put PDFs in `assets/`, and verify their paths. Commit changes to `main`; consult [GitHub Actions](https://github.com/JiayuEllieSu/JiayuEllieSu.github.io/actions) for deploy status. Locally, run `bundle install` and `bundle exec jekyll serve`.
+Put PDFs in `assets/`, and verify their paths. Commit changes to `main`; consult [GitHub Actions](https://github.com/JiayuEllieSu/JiayuEllieSu.github.io/actions) for deploy status. For local builds and link validation, follow the commands in [README.md](README.md). The link-check workflow also runs automatically on pushes.
 
-Unfinished pages may be kept in `_drafts/` or `_draft_projects/`. They are not published as pages, but the repository is public.
+Unfinished pages may be kept in `_drafts/` or `_draft_projects/`. They are not published as pages, but the repository is public. Keep custom theme changes as overrides; do not copy unchanged files from the pinned upstream theme.

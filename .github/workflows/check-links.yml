@@ -1,0 +1,31 @@
+name: Website link checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: '23 12 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test the link checker
+        run: python3 -m unittest discover -s _tools -p 'test_*.py' -v
+      - name: Build the site with GitHub Pages Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+      - name: Check internal links and files
+        run: python3 _tools/check_links.py _site
+      - name: Check external URLs on a schedule or manual run
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        run: python3 _tools/check_links.py _site --external
