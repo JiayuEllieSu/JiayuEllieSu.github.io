@@ -42,13 +42,20 @@ class LinkTests(unittest.TestCase):
         self.assertTrue(any("missing HTML anchor" in error for error in errors))
         self.assertEqual(warnings, [])
 
-    def test_external_deduplication_and_404_skip_link(self):
+    def test_external_deduplication_and_skip_links(self):
         self.write("index.html", "<a href='https://example.org/#a'>A</a><a href='https://example.org/#b'>B</a>")
-        self.write("404.html", "<a href='#main'>Skip to content</a>")
+        for name in ("404.html", "HOW_TO_PUBLISH.html"):
+            self.write(name, "<a href='#site-content'>Skip to content</a><div id='site-content'>Content</div>")
         errors, warnings, external, _ = check_site(self.root)
         self.assertEqual(errors, [])
-        self.assertEqual(len(warnings), 1)
+        self.assertEqual(warnings, [])
         self.assertEqual(list(external), ["https://example.org/"])
+
+    def test_missing_skip_link_is_an_error(self):
+        self.write("404.html", "<a href='#site-content'>Skip to content</a>")
+        errors, warnings, _, _ = check_site(self.root)
+        self.assertEqual(len(errors), 1)
+        self.assertEqual(warnings, [])
 
     def test_missing_vs_blocked_external(self):
         for code, expected in ((404, "broken"), (410, "broken"), (403, "warning"), (429, "warning"), (503, "warning")):

@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Test the link checker
         run: python3 -m unittest discover -s _tools -p 'test_*.py' -v
       - name: Build the site with GitHub Pages Jekyll

@@ -103,13 +103,7 @@ def check_site(root, origin=ORIGIN):
             else:
                 pages_for_target = pages[target].anchors
             if fragment not in pages_for_target:
-                message = f"{location}: missing HTML anchor in {raw!r}"
-                # The existing theme skip-link on the standalone 404 page
-                # has no main landmark. Report it without changing that page.
-                if relative.as_posix() == "404.html" and target == path and raw == "#main":
-                    warnings.append(message)
-                else:
-                    errors.append(message)
+                errors.append(f"{location}: missing HTML anchor in {raw!r}")
     return errors, warnings, external, len(pages)
 
 

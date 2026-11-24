@@ -24,7 +24,7 @@ python3 _tools/check_links.py _site
 python3 _tools/check_links.py _site --external
 ```
 
-GitHub Actions builds the site and checks internal page links, HTML anchors, and linked files on pushes and pull requests. External links are also checked weekly and on manual workflow runs. HTTP 404 and 410 fail the check; blocked requests, rate limits and transient network errors are reported as warnings. The existing skip link on the standalone 404 page is reported as a warning.
+GitHub Actions builds the site and checks internal page links, HTML anchors, and linked files on pushes and pull requests. External links are also checked weekly and on manual workflow runs. HTTP 404 and 410 fail the check; blocked requests, rate limits and transient network errors are reported as warnings.
 
 ## Repository structure
 
